@@ -41,5 +41,11 @@
   "public_files": [],
   "historical_external_strategy": true,
   "order_validity_bars": 1,
-  "max_abs_position": 1
+  "max_abs_position": 1,
+  "repair_policy": {
+    "editable_methods": [
+      "DoubleMaStrategy.on_bar"
+    ],
+    "preserve_conditions": true
+  }
 }

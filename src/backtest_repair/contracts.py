@@ -132,7 +132,7 @@ def validate_spec(spec):
         supported = {"1d", "1m"} if engine == "vnpy_cta" else {"1d", "5m", "30m", "1h"} if engine == "freqtrade" else supported
     if spec["clock"]["frequency"] not in supported:
         raise ContractError(
-            "Only single-instrument daily bars are supported", "out_of_scope"
+            "Unsupported frequency for this engine/profile: " + spec["clock"]["frequency"], "out_of_scope"
         )
     for key in (
         "initial_cash",
@@ -253,7 +253,7 @@ def capabilities(spec):
     return {
         "engine": spec["engine"],
         "version": spec["framework_version"],
-        "frequency": "1d",
+        "frequency": spec["clock"]["frequency"],
         "profiles": [spec["execution_profile"], spec["accounting_profile"]],
         "observations": {
             "native_orders": True,

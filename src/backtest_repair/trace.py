@@ -3,6 +3,22 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 
+def bar_times(spec, session):
+    clock = spec['clock']
+    zone = ZoneInfo(clock['timezone'])
+    if 'T' in session:
+        opening = datetime.fromisoformat(session).replace(tzinfo=zone)
+        unit = clock['frequency'][-1]
+        minutes = int(clock['frequency'][:-1]) * {'m': 1, 'h': 60, 'd': 1440}[unit]
+        closing = opening + timedelta(minutes=minutes)
+    else:
+        opening = datetime.fromisoformat(session + 'T' + clock['session_open']).replace(tzinfo=zone)
+        closing = datetime.fromisoformat(session + 'T' + clock['session_close']).replace(tzinfo=zone)
+        if closing <= opening:
+            closing += timedelta(days=1)
+    return opening, closing
+
+
 class Recorder:
     def __init__(self, spec, bars, enabled=True):
         self.spec, self.bars, self.enabled = spec, bars, enabled
@@ -15,15 +31,7 @@ class Recorder:
         i = max(0, min(int(i), len(self.bars) - 1))
         clock = self.spec["clock"]
         day = self.bars[i]["date"]
-        if "T" in day:
-            opening = datetime.fromisoformat(day).replace(tzinfo=ZoneInfo(clock["timezone"]))
-            minutes = int(clock["frequency"][:-1]) * (60 if clock["frequency"].endswith("h") else 1)
-            closing = opening + timedelta(minutes=minutes)
-        else:
-            opening = datetime.fromisoformat(day + "T" + clock["session_open"]).replace(tzinfo=ZoneInfo(clock["timezone"]))
-            closing = datetime.fromisoformat(day + "T" + clock["session_close"]).replace(tzinfo=ZoneInfo(clock["timezone"]))
-        if closing <= opening:
-            closing += timedelta(days=1)
+        opening, closing = bar_times(self.spec, day)
         timestamp = opening if phase in {"open", "match"} else closing
         self.events.append(
             {

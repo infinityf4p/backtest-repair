@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from .contracts import ContractError
+from .trace import bar_times
 
 _recorder = None
 _releases = []
@@ -33,14 +34,7 @@ def latest_release(session, use="available_at", default=0.0):
         )
     clock = _recorder.spec["clock"]
     zone = ZoneInfo(clock["timezone"])
-    opening = datetime.fromisoformat(session + "T" + clock["session_open"]).replace(
-        tzinfo=zone
-    )
-    decision = datetime.fromisoformat(session + "T" + clock["session_close"]).replace(
-        tzinfo=zone
-    )
-    if decision <= opening:
-        decision += timedelta(days=1)
+    _, decision = bar_times(_recorder.spec, session)
 
     def timestamp(row):
         value = datetime.fromisoformat(row[use])

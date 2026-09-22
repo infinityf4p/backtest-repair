@@ -11,6 +11,8 @@ from backtest_repair.contracts import load_json, dump_json, read_bars, digest
 from backtest_repair.runner import Runner, Budget
 from backtest_repair.semantics import ledger, fee
 from defect_checks import check_contract
+from backtest_repair.identity import execution_identity, reuse_completed
+from backtest_repair.preservation import check_preservation
 
 def near(a,b):
     if a is None or b is None: return a is b
@@ -22,6 +24,13 @@ def financial_check(spec,bars,result):
     expected=ledger(spec,bars,fills)
     observed_fills=[e for e in result['events'] if e['kind']=='fill']
     errors=[]
+    if spec.get('native_exit_rules'):
+        configs=[e.get('exit_rules') for e in result['events'] if e['kind']=='execution_config']
+        if len(configs)!=1 or configs[0]!=spec['native_exit_rules']:
+            errors.append({'field':'execution_config','expected':spec['native_exit_rules'],'actual':configs})
+    for field in ['equity','position']+(['cash'] if spec['accounting_profile']=='cash_equity' else []):
+        if native.get(field) is None or not math.isfinite(float(native[field])):
+            errors.append({'field':field,'reason':'Required native account observation missing or nonfinite'})
     for i,f in enumerate(fills):
         if not near(f['fee'],fee(spec,f['qty'],f['price'])):
             errors.append({'fill':i,'field':'fee','expected':fee(spec,f['qty'],f['price']),'actual':f['fee']})
@@ -44,28 +53,31 @@ def financial_check(spec,bars,result):
 
 def observations(result,last_session):
     values={}; fills=[]; orders=[]
+    terminal_ids={e['order_id'] for e in result.get('events',[]) if e['kind']=='fill' and e.get('order_id') is not None and (e.get('exit_reason')=='force_exit' or e.get('phase')=='finalize')}
     for e in result.get('events',[]):
         if e['session']>last_session: continue
         if e['kind']=='indicator': values[e['session']+'|indicator|'+e['name']]=e['value']
         elif e['kind']=='signal':
             values[e['session']+'|entry']=e.get('signal')
             if 'exit_signal' in e: values[e['session']+'|exit']=e['exit_signal']
-        elif e['kind']=='order':
+        elif e['kind']=='order' and e.get('order_id') not in terminal_ids and e.get('phase')!='finalize':
             orders.append((e['session'],e.get('qty'),e.get('order_type'),e.get('price')))
     for row in result.get('native',{}).get('indicators',[]):
         if row['session']<=last_session:
             for name,value in row['values'].items(): values[row['session']+'|indicator|'+name]=value
     for f in result.get('native',{}).get('fills',[]):
-        if f['session']<=last_session: fills.append({k:f[k] for k in ['session','qty','price','fee']})
+        if f['session']<=last_session and f.get('exit_reason')!='force_exit' and not f.get('terminal',False): fills.append({k:f[k] for k in ['session','qty','price','fee']})
     return values,fills,orders
 
 def prefix_check(full,prefix,bars,count):
     if full['status']!='ok' or prefix['status']!='ok':
         return {'status':'inconclusive','reason':prefix.get('error') or full.get('error'),'full_status':full['status'],'prefix_status':prefix['status']}
-    # The last two rows are excluded from comparison because native end-of-run
-    # liquidation and pending notifications differ legitimately at an artificial end.
-    last=bars[count-3]['date']
+    # Compare indicators/signals through the decision boundary. Only explicitly
+    # identified forced terminal fills/orders are excluded by observations().
+    last=bars[count-1]['date']
     a,af,ao=observations(full,last); b,bf,bo=observations(prefix,last)
+    if not any(v is not None for v in a.values()) and not af and not ao:
+        return {'status':'inconclusive','reason':'No meaningful indicator, signal, order or fill observations through the cutoff','difference_count':0}
     differences=[]
     for key in sorted(a.keys()|b.keys()):
         if key not in a or key not in b or not near(a.get(key),b.get(key)):
@@ -87,14 +99,16 @@ def short(result):
 def baseline(ident,runtime,tag='baseline'):
     case=ROOT/'cases'/ident
     output=ROOT/'results'/tag/ident
-    if (output/'summary.json').exists():
+    identity=execution_identity(case,runtime,load_json(ROOT/'protocol.json'),[ROOT/'external_eval.py',ROOT/'defect_checks.py'])
+    cached=reuse_completed(output/'summary.json',identity)
+    if cached is not None:
         print(json.dumps({'case':ident,'skipped':'already recorded'}),flush=True)
-        return load_json(output/'summary.json')
+        return cached
     spec=load_json(case/'task.json'); bars=read_bars(case/'fixtures/bars.csv')
     runner=Runner(runtime,output/'native_runs',Budget(max_runs=3,max_seconds=600),mode='ssh_docker')
     full=runner.run(case)
     dump_json(output/'full.json',full)
-    result={'case':ident,'source_sha256':digest(case/'strategy.py'),'baseline':short(full),'financial':financial_check(spec,bars,full),'invariants':check_contract(spec,bars,full)}
+    result={'case':ident,'execution_identity':identity,'source_sha256':digest(case/'strategy.py'),'baseline':short(full),'financial':financial_check(spec,bars,full),'invariants':check_contract(spec,bars,full),'preservation':check_preservation(case/'strategy.py',case/'strategy.py',spec.get('repair_policy'))}
     if full['status']=='ok':
         count=int(len(bars)*load_json(ROOT/'protocol.json')['visible_prefix_fractions'][0])
         prefix=runner.run(case,bars=bars[:count])

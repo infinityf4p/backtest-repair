@@ -60,5 +60,11 @@
       "source": "volume",
       "window": 12
     }
+  },
+  "repair_policy": {
+    "editable_methods": [
+      "Strategy004.populate_indicators"
+    ],
+    "preserve_conditions": true
   }
 }

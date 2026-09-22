@@ -97,5 +97,11 @@
         "minus_di"
       ]
     ]
+  },
+  "repair_policy": {
+    "editable_methods": [
+      "ADXMomentun.populate_sell_trend"
+    ],
+    "preserve_conditions": true
   }
 }
