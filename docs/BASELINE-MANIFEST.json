@@ -1,0 +1,265 @@
+{
+  "stage": "Initial public snapshot before reviewed fixes",
+  "files": [
+    {
+      "path": "cases/adx_missing_exit/bridge.py",
+      "sha256": "d9ba21c13bfe3d44cac4f050d4811d5fbbe9c63347b118281dabfbfb04306970"
+    },
+    {
+      "path": "cases/adx_missing_exit/fixtures/bars.csv",
+      "sha256": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3"
+    },
+    {
+      "path": "cases/adx_missing_exit/strategy.py",
+      "sha256": "37e0e6ae4b51f1ef8ee0bb1569fe7cd9ca68a21bfa87edab863aa6ccf1fe0091"
+    },
+    {
+      "path": "cases/adx_missing_exit/task.json",
+      "sha256": "4e46c5b5a44a5c508897a922184991b3be36b10560df7a9e739c6093e48d4119"
+    },
+    {
+      "path": "cases/vnpy_stale_orders/fixtures/bars.csv",
+      "sha256": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161"
+    },
+    {
+      "path": "cases/vnpy_stale_orders/fixtures/warmup.csv",
+      "sha256": "a091380e524dd89943e7cfbd6764c6f3185e0c6bf47188845b3c40cd5f487e0c"
+    },
+    {
+      "path": "cases/vnpy_stale_orders/strategy.py",
+      "sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324"
+    },
+    {
+      "path": "cases/vnpy_stale_orders/task.json",
+      "sha256": "5d261336127df2b8201a4e596e83042e3f55824417df70b9ab91e035656713eb"
+    },
+    {
+      "path": "cases/volume_lookahead/fixtures/bars.csv",
+      "sha256": "98d6939999d28b8b62b37e6ae8b67f2feaca5653c069ad0e0a6fdc82d868f129"
+    },
+    {
+      "path": "cases/volume_lookahead/strategy.py",
+      "sha256": "1a0f647b36c08ecfc983b926f54d69bcb1ac14d2fa14fb5fc73e3f1928e785f9"
+    },
+    {
+      "path": "cases/volume_lookahead/task.json",
+      "sha256": "56acb272103cc38c803fa814f7b1e28eac25886ee69c3d3e33cf3b276b5dfe59"
+    },
+    {
+      "path": "defect_checks.py",
+      "sha256": "c39e58d07f3e8888581cc76ec46cfb5c7f752f292e03375ed51ceca2de5b15ed"
+    },
+    {
+      "path": "environments/build_images.py",
+      "sha256": "ad0c4f9f37a997ece99afa48e1ab3c07916db0d622612cc23c0b98d78aad2aff"
+    },
+    {
+      "path": "environments/external-dependencies.json",
+      "sha256": "9481cf56856128055f514c041ece80fa2824ce4484a796ce026e0ad4e0774ea3"
+    },
+    {
+      "path": "environments/runtime.example.json",
+      "sha256": "806cc19a08a46e9bd825087c12d950d59ad903de5f21cde1c08b74883a4cee7e"
+    },
+    {
+      "path": "environments/setup.py",
+      "sha256": "b28ffb71f2d8dbb65400cfb1b95dd5f0c48d850a285e484db287e65cfa65ffe6"
+    },
+    {
+      "path": "external_agent.py",
+      "sha256": "12a7451dc752c25388c18f7ad75d7476836b094d07ee7a984c0743cbd3c77b63"
+    },
+    {
+      "path": "external_eval.py",
+      "sha256": "c575854e6712f38708c577ba623938a14a655cd0d4138f3b3b9087667d2e7ac2"
+    },
+    {
+      "path": "holdout/adx_missing_exit/bars.csv",
+      "sha256": "ab112b50a319b62a7fde8dcf9fd77ad886233dd9fe0a4534573a026ae2824228"
+    },
+    {
+      "path": "holdout/vnpy_stale_orders/bars.csv",
+      "sha256": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c"
+    },
+    {
+      "path": "holdout/vnpy_stale_orders/warmup.csv",
+      "sha256": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161"
+    },
+    {
+      "path": "holdout/volume_lookahead/bars.csv",
+      "sha256": "fabb05b2d908e9902e2911bb0c215d53ae6f1d12075387689ba7d918b1d9009a"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "146233fb2b82ff2c951f1cde03417cb164a5a7e51f4b3c67d9f02506ee54c199"
+    },
+    {
+      "path": "provenance/adx_missing_exit/after/user_data/strategies/berlinguyinca/ADXMomentum.py",
+      "sha256": "82ca93f6d47d6f7fcfa89ab5504b961940e34887232b3306116cb24a2e496f74"
+    },
+    {
+      "path": "provenance/adx_missing_exit/before/user_data/strategies/berlinguyinca/ADXMomentum.py",
+      "sha256": "37e0e6ae4b51f1ef8ee0bb1569fe7cd9ca68a21bfa87edab863aa6ccf1fe0091"
+    },
+    {
+      "path": "provenance/adx_missing_exit/files.json",
+      "sha256": "ac0fc32669aa9e71119154afb75ff27b693238ed1c6609decdfbf2a6923ffcb3"
+    },
+    {
+      "path": "provenance/adx_missing_exit/pr.json",
+      "sha256": "eb2a5f182006f8322e4b1b6d24a8b9b05cde4d3ad3751cc3e8746937cca77543"
+    },
+    {
+      "path": "provenance/vnpy_stale_orders/after/vnpy_ctastrategy/strategies/double_ma_strategy.py",
+      "sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4"
+    },
+    {
+      "path": "provenance/vnpy_stale_orders/before/vnpy_ctastrategy/strategies/double_ma_strategy.py",
+      "sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324"
+    },
+    {
+      "path": "provenance/vnpy_stale_orders/files.json",
+      "sha256": "4ed6d61cdc44e71c4968eae8bfef9011d867114990a046aaf81f55fa3a2237e1"
+    },
+    {
+      "path": "provenance/vnpy_stale_orders/pr.json",
+      "sha256": "09bc76ac7402f36ada7a2933a8c11f356612e3b26e10ef9fe0c9f3b40a7078c4"
+    },
+    {
+      "path": "provenance/volume_lookahead/after/user_data/strategies/Strategy004.py",
+      "sha256": "32d076f39960d2f4222655875baec252515ddf892f3eee93500645c0a668fcd5"
+    },
+    {
+      "path": "provenance/volume_lookahead/before/user_data/strategies/Strategy004.py",
+      "sha256": "1a0f647b36c08ecfc983b926f54d69bcb1ac14d2fa14fb5fc73e3f1928e785f9"
+    },
+    {
+      "path": "provenance/volume_lookahead/files.json",
+      "sha256": "b42dd1cf6299e2a38bc16b4f1a94cf659c92831a2cad9dee7866f6e8f0e3c318"
+    },
+    {
+      "path": "provenance/volume_lookahead/pr.json",
+      "sha256": "f0c9778e1bd00c8c46e80b0be0ec511dacaad3963abf40d54f9eca8f47e85a8d"
+    },
+    {
+      "path": "run_defects.py",
+      "sha256": "5039a187ada5aebed5909bc4a61645d781cb5745164406172fa34854405de6e8"
+    },
+    {
+      "path": "runtime.example.json",
+      "sha256": "75741967d78ddd73ed22c567ae6f4962a6542d8dfaf8ead4a820ad0652595b14"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "47acb9bff35d09a3e19e560776c6d52663547841f005be338a415dedeb496fa2"
+    },
+    {
+      "path": "src/backtest_repair/__init__.py",
+      "sha256": "68729ceb31958c9b122c92bb1b761be0dabaa417a80c1728bb807a40f4b87d37"
+    },
+    {
+      "path": "src/backtest_repair/adapters/__init__.py",
+      "sha256": "b884632c11b9bb57a9b5e0c59cc204f0c261bbac0aaee338fc3818d0c9b241a8"
+    },
+    {
+      "path": "src/backtest_repair/adapters/backtesting_py.py",
+      "sha256": "5251a22eb4f580c5963edb9211cd7c6cca03ffd4893a1ab8181d9577c0c218d2"
+    },
+    {
+      "path": "src/backtest_repair/adapters/backtrader.py",
+      "sha256": "3bce264c5659ad2b560440c59d2e3c278ae016b3504a53d9af8cba87876bda96"
+    },
+    {
+      "path": "src/backtest_repair/adapters/common.py",
+      "sha256": "664ba578fa4dfa0ff3a5081ea5089a72c7173c412c3b00276a0630b17138e138"
+    },
+    {
+      "path": "src/backtest_repair/adapters/freqtrade.py",
+      "sha256": "3756947ca08354e6f2e21d11cba2a62d16c44d6fd19e9c56a4a4ab1d1d2173c5"
+    },
+    {
+      "path": "src/backtest_repair/adapters/freqtrade_analysis.py",
+      "sha256": "af4a42ea7c67f63cc0105379663c434f83ab34e6023e34bbd8d05f32c74a751e"
+    },
+    {
+      "path": "src/backtest_repair/adapters/rqalpha.py",
+      "sha256": "f62c9b5272b0ca7e607686467d9260cefa283d9ad7a8714aceca420ca88b1e59"
+    },
+    {
+      "path": "src/backtest_repair/adapters/vnpy_cta.py",
+      "sha256": "212475fc4794d04f4c6ad57254eec212a23e3b001b225da4eac8cdef0d505de2"
+    },
+    {
+      "path": "src/backtest_repair/agent.py",
+      "sha256": "f3e757fa6f55f2c9d9cb9b243a7433384991759ffebb317e3369298818e5d35c"
+    },
+    {
+      "path": "src/backtest_repair/cli.py",
+      "sha256": "a0245ba6071b8fd50677443aba9438012c61002f365968dfda5ed9082e268508"
+    },
+    {
+      "path": "src/backtest_repair/contracts.py",
+      "sha256": "ee426b90be9a3af0ec404d081f93ddd2d1c4a3d145fa7659a2be06dc32cb0e19"
+    },
+    {
+      "path": "src/backtest_repair/fixture_api.py",
+      "sha256": "46fd117988261a04f2bf83a6e64cd4c2a126461fc2b0b47f3313d249441f0f2b"
+    },
+    {
+      "path": "src/backtest_repair/model.py",
+      "sha256": "fe6bf69e9b10b9d85542ad37546e048f1776f6cf754175f9050d637ff740cc8c"
+    },
+    {
+      "path": "src/backtest_repair/probes.py",
+      "sha256": "be3da8b41b3c01c296ef0f5ab7ca6beeb715e56f95f5e2a6d905e9a08230d1c4"
+    },
+    {
+      "path": "src/backtest_repair/remote.py",
+      "sha256": "71dbf4f06c65628097f9421306e0c041bbe15fc59deda74e6d6ca7fae0466465"
+    },
+    {
+      "path": "src/backtest_repair/reporting.py",
+      "sha256": "673e99113c0ac626250b6302a6f33ba79992f401fc5a331fdeba30a0f3bf6ac8"
+    },
+    {
+      "path": "src/backtest_repair/runner.py",
+      "sha256": "6d10762ad23fe9e728723e1d8c0daa6c601ad86bf61e78182ab51463d3960d1e"
+    },
+    {
+      "path": "src/backtest_repair/semantics.py",
+      "sha256": "4324d12ebd9cabedbb97199b6710a3e64863e0bec6f571681186c2377397a127"
+    },
+    {
+      "path": "src/backtest_repair/shrink.py",
+      "sha256": "89bc8c102cb7bf02203d259a0595660a28da490c710955277eec6c7e8423818f"
+    },
+    {
+      "path": "src/backtest_repair/stream_worker.py",
+      "sha256": "6c77505e50d6bc18486a60af45d1f959c6032a970efb39286fbaf4a780dcc005"
+    },
+    {
+      "path": "src/backtest_repair/tools.py",
+      "sha256": "41e7df2b2e94d48b76551990aa5da153815d0a613c46c518d2441970dc82b865"
+    },
+    {
+      "path": "src/backtest_repair/trace.py",
+      "sha256": "60d63596da15c957ba2795a5600acb87367ba9f12ba21d714ba335886d6bd919"
+    },
+    {
+      "path": "src/backtest_repair/worker.py",
+      "sha256": "33b5f26abd3c328bcebdba05e3968b2d1e8456c310fdc45429c1ca02a5a14b99"
+    },
+    {
+      "path": "tests/test_external_ledger.py",
+      "sha256": "1a0bcce2181adc66dbea4eed5110884f74421884af26f47eb00226c21e3de46e"
+    },
+    {
+      "path": "tests/test_external_transport.py",
+      "sha256": "3cfb373c823d26aa4c9f29ddfbc82fa1206af1a79566bbe2a4c51225cc775022"
+    },
+    {
+      "path": "tests/test_trading_contracts.py",
+      "sha256": "d4092020901067081719eebbcd3462b523f7c53b4b8708350d695a117cf484c9"
+    }
+  ]
+}

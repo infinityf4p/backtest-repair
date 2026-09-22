@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling==1.27.0", "editables==0.5"]
+build-backend = "hatchling.build"
+
+[project]
+name = "backtest-repair"
+version = "0.3.0"
+description = "Native-engine counterexample and repair harness for structured trading strategies"
+requires-python = ">=3.11"
+dependencies = ["tzdata==2026.4"]
+license = "MIT"
+
+[project.optional-dependencies]
+remote = ["paramiko==4.0.0"]
+dev = ["pytest==8.4.2", "ruff==0.15.7"]
+
+[project.scripts]
+btr = "backtest_repair.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/backtest_repair"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-ra"

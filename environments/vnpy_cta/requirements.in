@@ -1,0 +1,4 @@
+vnpy==4.4.0
+vnpy_ctastrategy==1.4.1
+pandas==2.3.3
+

@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "681b1baf8ac5e747f2379b19a456a7495541e295",
+    "filename": "user_data/strategies/berlinguyinca/ADXMomentum.py",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/freqtrade/freqtrade-strategies/blob/e018d22ef8dfef537f2d3663990d04b896ff8f0a/user_data%2Fstrategies%2Fberlinguyinca%2FADXMomentum.py",
+    "raw_url": "https://github.com/freqtrade/freqtrade-strategies/raw/e018d22ef8dfef537f2d3663990d04b896ff8f0a/user_data%2Fstrategies%2Fberlinguyinca%2FADXMomentum.py",
+    "contents_url": "https://api.github.com/repos/freqtrade/freqtrade-strategies/contents/user_data%2Fstrategies%2Fberlinguyinca%2FADXMomentum.py?ref=e018d22ef8dfef537f2d3663990d04b896ff8f0a",
+    "patch": "@@ -61,5 +61,5 @@ def populate_sell_trend(self, dataframe: DataFrame) -> DataFrame:\n                     (dataframe['plus_di'] > dataframe['minus_di'])\n \n             ),\n-            'sell'] = 0\n+            'sell'] = 1\n         return dataframe"
+  }
+]

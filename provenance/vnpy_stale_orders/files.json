@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "63385e3a13a3120b282d669278f784c11d7be28c",
+    "filename": "vnpy_ctastrategy/strategies/double_ma_strategy.py",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/vnpy/vnpy_ctastrategy/blob/9465ea27696e43889ea9a5d3946b1f3173d7a039/vnpy_ctastrategy%2Fstrategies%2Fdouble_ma_strategy.py",
+    "raw_url": "https://github.com/vnpy/vnpy_ctastrategy/raw/9465ea27696e43889ea9a5d3946b1f3173d7a039/vnpy_ctastrategy%2Fstrategies%2Fdouble_ma_strategy.py",
+    "contents_url": "https://api.github.com/repos/vnpy/vnpy_ctastrategy/contents/vnpy_ctastrategy%2Fstrategies%2Fdouble_ma_strategy.py?ref=9465ea27696e43889ea9a5d3946b1f3173d7a039",
+    "patch": "@@ -64,6 +64,7 @@ def on_bar(self, bar: BarData):\n         \"\"\"\n         Callback of new bar data update.\n         \"\"\"\n+        self.cancel_all()\n \n         am = self.am\n         am.update_bar(bar)"
+  }
+]

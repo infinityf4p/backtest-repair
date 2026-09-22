@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "45b331c0421ead6c013bb2a1a134638875f95d73",
+    "filename": "user_data/strategies/Strategy004.py",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 2,
+    "changes": 7,
+    "blob_url": "https://github.com/freqtrade/freqtrade-strategies/blob/b883bed62a0f15d82cbae46cd8219b6c8bda138c/user_data%2Fstrategies%2FStrategy004.py",
+    "raw_url": "https://github.com/freqtrade/freqtrade-strategies/raw/b883bed62a0f15d82cbae46cd8219b6c8bda138c/user_data%2Fstrategies%2FStrategy004.py",
+    "contents_url": "https://api.github.com/repos/freqtrade/freqtrade-strategies/contents/user_data%2Fstrategies%2FStrategy004.py?ref=b883bed62a0f15d82cbae46cd8219b6c8bda138c",
+    "patch": "@@ -103,8 +103,11 @@ def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame\n \n         # EMA - Exponential Moving Average\n         dataframe['ema5'] = ta.EMA(dataframe, timeperiod=5)\n-\n-        dataframe['mean-volume'] = dataframe['volume'].mean()\n+        \n+        # get the rolling volume mean for the last hour (12x5)\n+        # Note: dataframe['volume'].mean() uses the whole dataframe in \n+        # backtesting hence will have lookahead, but would be fine for dry/live use\n+        dataframe['mean-volume'] = dataframe['volume'].rolling(12).mean()\n \n         return dataframe\n "
+  }
+]

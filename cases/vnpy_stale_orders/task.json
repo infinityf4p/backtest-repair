@@ -1,0 +1,45 @@
+{
+  "task_id": "vnpy_stale_orders",
+  "engine": "vnpy_cta",
+  "framework_version": "1.4.1",
+  "entrypoint": "strategy:DoubleMaStrategy",
+  "strategy_rules": "Keep native 10/20 SMA crossovers and one-contract long/short reversal. Unfilled signal orders get one subsequent bar matching opportunity and must no longer remain active after that bar on_bar. Never accumulate stale signal orders or exceed absolute position one. Preserve all indicators and thresholds.",
+  "execution_profile": "futures_bar_limit",
+  "accounting_profile": "linear_futures_pnl",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "1m",
+    "bar_label": "session_date",
+    "instrument": "ETHUSDT.LOCAL",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.0004,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 100,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "parameters": {},
+  "external_strategy": true,
+  "observable_attributes": [
+    "fast_ma0",
+    "slow_ma0"
+  ],
+  "public_files": [],
+  "historical_external_strategy": true,
+  "order_validity_bars": 1,
+  "max_abs_position": 1
+}

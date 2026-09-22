@@ -1,0 +1,101 @@
+{
+  "task_id": "adx_missing_exit",
+  "engine": "freqtrade",
+  "framework_version": "2026.8",
+  "entrypoint": "bridge:CompatibleADX",
+  "strategy_rules": "Preserve original hourly ADX/MOM/DI entry and exit predicates. Each true entry predicate emits buy=1; each true exit predicate emits sell=1. False predicates must not emit that signal. Preserve original 1% ROI and 25% stop. The read-only bridge only translates legacy signatures and buy/sell column names to native interface v3.",
+  "execution_profile": "spot_next_open_force_exit",
+  "accounting_profile": "cash_equity",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "1h",
+    "bar_label": "session_date",
+    "instrument": "ETH/USDT",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.001,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 50,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "native_exit_rules": {
+    "minimal_roi": {
+      "0": 0.01
+    },
+    "stoploss": -0.25,
+    "use_exit_signal": true
+  },
+  "parameters": {},
+  "external_strategy": true,
+  "indicator_columns": [
+    "adx",
+    "mom",
+    "minus_di",
+    "plus_di",
+    "sar"
+  ],
+  "public_files": [
+    "bridge.py"
+  ],
+  "historical_external_strategy": true,
+  "signal_conditions": {
+    "enter_long": [
+      [
+        "adx",
+        ">",
+        25
+      ],
+      [
+        "mom",
+        "<",
+        0
+      ],
+      [
+        "minus_di",
+        ">",
+        25
+      ],
+      [
+        "plus_di",
+        "<",
+        "minus_di"
+      ]
+    ],
+    "exit_long": [
+      [
+        "adx",
+        ">",
+        25
+      ],
+      [
+        "mom",
+        ">",
+        0
+      ],
+      [
+        "minus_di",
+        ">",
+        25
+      ],
+      [
+        "plus_di",
+        ">",
+        "minus_di"
+      ]
+    ]
+  }
+}

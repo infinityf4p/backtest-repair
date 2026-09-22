@@ -1,0 +1,14 @@
+{
+  "vnpy_cta": {"image": "backtest-repair-defects/vnpy_cta:0.3.0"},
+  "freqtrade": {"image": "backtest-repair-defects/freqtrade:0.3.0"},
+  "worker_timeout": 180,
+  "remote": {
+    "transport": "paramiko",
+    "host": "USER@YOUR_LINUX_HOST",
+    "hostname": "YOUR_LINUX_HOST",
+    "user": "USER",
+    "port": 22,
+    "known_hosts": "C:/path/to/verified_known_hosts",
+    "password_env": "BTR_SSH_PASSWORD"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "worker_timeout": 180,
+  "backtrader": {"python": ".runtime/backtrader/bin/python", "image": "backtest-repair/backtrader:0.1.0"},
+  "backtesting_py": {"python": ".runtime/backtesting_py/bin/python", "image": "backtest-repair/backtesting_py:0.1.0"},
+  "vnpy_cta": {"python": ".runtime/vnpy_cta/bin/python", "image": "backtest-repair/vnpy_cta:0.1.0"},
+  "rqalpha": {"python": ".runtime/rqalpha/bin/python", "image": "backtest-repair/rqalpha:0.1.0"},
+  "freqtrade": {"python": ".runtime/freqtrade/bin/python", "image": "backtest-repair/freqtrade:0.1.0"},
+  "remote": {
+    "transport": "paramiko",
+    "hostname": "YOUR_DOCKER_HOST",
+    "host": "YOUR_USER@YOUR_DOCKER_HOST",
+    "user": "YOUR_USER",
+    "port": 22,
+    "known_hosts": "/absolute/path/to/known_hosts",
+    "identity": "/absolute/path/to/private_key"
+  }
+}

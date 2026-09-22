@@ -1,0 +1,64 @@
+{
+  "task_id": "volume_lookahead",
+  "engine": "freqtrade",
+  "framework_version": "2026.8",
+  "entrypoint": "strategy:Strategy004",
+  "strategy_rules": "Preserve Strategy004 native ADX/CCI/Stoch/EMA trading predicates, thresholds, ROI, stop, 5m timeframe and order settings. The mean-volume gate must use the trailing one hour (12 five-minute candles) available at each close and cannot depend on later candles.",
+  "execution_profile": "spot_next_open_force_exit",
+  "accounting_profile": "cash_equity",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "5m",
+    "bar_label": "session_date",
+    "instrument": "BTC/USDT",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.001,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 70,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "native_exit_rules": {
+    "minimal_roi": {
+      "60": 0.01,
+      "30": 0.03,
+      "20": 0.04,
+      "0": 0.05
+    },
+    "stoploss": -0.1,
+    "use_exit_signal": true
+  },
+  "parameters": {},
+  "external_strategy": true,
+  "indicator_columns": [
+    "adx",
+    "slowadx",
+    "cci",
+    "fastk",
+    "fastd",
+    "ema5",
+    "mean-volume"
+  ],
+  "public_files": [],
+  "historical_external_strategy": true,
+  "rolling_columns": {
+    "mean-volume": {
+      "source": "volume",
+      "window": 12
+    }
+  }
+}
