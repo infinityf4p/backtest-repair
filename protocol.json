@@ -1,28 +1,17 @@
 {
-  "version": "0.3.0-historical-defects",
-  "strategy_count": 3,
+  "version": "0.4.0-twenty-public",
+  "strategy_count": 20,
   "agent_episodes_per_strategy": 1,
-  "methods": [
-    "evidence-driven external audit/repair"
-  ],
   "model": "gpt-6-astra",
   "reasoning_effort": "max",
   "max_model_decisions": 5,
   "max_tokens_per_episode": 50000,
   "max_output_tokens_per_call": 6000,
-  "visible_prefix_fractions": [
-    0.5
-  ],
-  "holdout_prefix_fractions": [
-    0.5
-  ],
-  "retries": "No independent statistical repetitions; fixes receive focused regression; infrastructure failures are retained.",
-  "oracle": "Public entry/exit predicate checks, stale-order lifetime and position checks, causal prefix comparison, independent fee/account ledger. Published upstream patch is compared only after submission.",
-  "scope_limits": [
-    "Three selected historical bug versions supported by merged upstream PRs; not current-version vulnerabilities or random prevalence estimates.",
-    "Legacy ADX API uses an explicitly recorded bridge; native matching engine is Freqtrade 2026.8.",
-    "Held-out later historical periods are not sent to agent; no upstream fixed source or PR patch is sent to model or baseline containers."
-  ],
-  "strategy_selection_frozen_before_execution": true,
-  "market_selection": "ADX visible market changed from BTC 2024 Q1 to ETH 2024 Q1 after zero exit-predicate coverage; full selection log retained. All final inputs and later-period holdouts frozen before agent calls."
+  "max_native_runs": 12,
+  "max_seconds": 1800,
+  "cutoff_fraction": 0.5,
+  "selection": "17 published examples plus 3 historical bug versions; WTC is a published known-lookahead example. One distinct original source per case. Not a random or production deployment sample.",
+  "holdout": "Later historical periods frozen before agent execution, never sent to model or used for repair feedback.",
+  "repetition_policy": "One agent episode per case. Identical native calls reused. Necessary patch/probe/holdout runs counted separately.",
+  "scope": "Single instrument under explicit native execution and fee profiles; no claim of live profitability or universal correctness."
 }

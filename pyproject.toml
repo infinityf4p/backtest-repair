@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "backtest-repair"
-version = "0.3.0"
+version = "0.4.0"
 description = "Native-engine counterexample and repair harness for structured trading strategies"
 requires-python = ">=3.11"
 dependencies = ["tzdata==2026.4"]

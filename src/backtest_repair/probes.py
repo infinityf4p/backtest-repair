@@ -10,7 +10,9 @@ def future_perturbation(bars, cutoff_index, seed=0):
     rng = random.Random(seed)
     result = deepcopy(bars)
     for b in result[cutoff_index + 1 :]:
-        scale = rng.choice([0.3, 0.55, 1.8, 3.0])
+        # Keep price changes bounded: huge independent jumps can invalidate a
+        # perfectly normal ATR stop and make the diagnostic itself unexecutable.
+        scale = rng.uniform(0.96, 1.04)
         for k in ("open", "high", "low", "close"):
             b[k] = round(b[k] * scale, 6)
         b["volume"] *= rng.choice([0.5, 3])

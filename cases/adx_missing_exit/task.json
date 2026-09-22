@@ -9,7 +9,7 @@
   "clock": {
     "timezone": "UTC",
     "frequency": "1h",
-    "bar_label": "session_date",
+    "bar_label": "bar_start",
     "instrument": "ETH/USDT",
     "session_open": "00:00:00",
     "session_close": "00:00:00"
@@ -103,5 +103,9 @@
       "ADXMomentun.populate_sell_trend"
     ],
     "preserve_conditions": true
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
   }
 }

@@ -74,9 +74,9 @@ def run(spec, bars, rec):
                         "backtesting._Broker.orders",
                         order_id=oid,
                         qty=float(order.size),
-                        order_type="market"
-                        if not order.limit and not order.stop
-                        else "unsupported",
+                        order_type="stop_limit" if order.limit and order.stop else "limit" if order.limit else "stop" if order.stop else "market",
+                        price=float(order.limit) if order.limit else None,
+                        stop_price=float(order.stop) if order.stop else None,
                         status="submitted",
                     )
             broker = self._broker

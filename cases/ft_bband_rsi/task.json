@@ -1,0 +1,59 @@
+{
+  "task_id": "ft_bband_rsi",
+  "engine": "freqtrade",
+  "framework_version": "2026.8",
+  "entrypoint": "strategy:BbandRsi",
+  "strategy_rules": "Preserve the complete published strategy class/module, default indicators, parameters, signal predicates, position sizing and order rules. Run on the declared historical instrument under the explicit native execution profile and costs. Report only demonstrated violations. Inactive paths are not proven correct.",
+  "execution_profile": "spot_next_open_force_exit",
+  "accounting_profile": "cash_equity",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "1h",
+    "bar_label": "bar_start",
+    "instrument": "ETH/USDT",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.001,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 70,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "native_exit_rules": {
+    "minimal_roi": {
+      "0": 0.1
+    },
+    "stoploss": -0.25,
+    "use_exit_signal": true
+  },
+  "parameters": {},
+  "external_strategy": true,
+  "public_files": [],
+  "repair_policy": {
+    "editable_methods": [],
+    "preserve_conditions": true
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
+  },
+  "indicator_columns": [
+    "rsi",
+    "bb_lowerband",
+    "bb_middleband",
+    "bb_upperband"
+  ]
+}

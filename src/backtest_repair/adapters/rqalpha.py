@@ -291,7 +291,13 @@ def run(spec, bars, rec):
         for name in ("before_trading", "after_trading")
         if callable(getattr(module, name, None))
     }
-    run_func(config=config, init=module.init, handle_bar=handle_bar, **hooks)
+    result = run_func(config=config, init=module.init, handle_bar=handle_bar, **hooks)
     if not final:
         raise RuntimeError("RQAlpha produced no native account observations")
-    return {**final, "fills": fills}
+    import math
+    indicators=[]
+    plots=result.get("sys_analyser",{}).get("plots") if result else None
+    if plots is not None:
+        for timestamp,row in plots.iterrows():
+            indicators.append({"session":timestamp.date().isoformat(),"values":{str(name):float(value) if math.isfinite(float(value)) else None for name,value in row.items()}})
+    return {**final, "fills": fills, "indicators":indicators}

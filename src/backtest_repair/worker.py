@@ -7,7 +7,7 @@ import random
 import sys
 import traceback
 
-from .contracts import DISTRIBUTIONS, dump_json, load_json, read_bars, validate_spec
+from .contracts import DISTRIBUTIONS, dump_json, load_json, read_bars, validate_spec, digest, safe_path
 from .trace import Recorder
 from . import fixture_api
 
@@ -20,6 +20,9 @@ def main():
     request = load_json(sys.argv[1])
     output = Path(sys.argv[2])
     try:
+        expected=request.get('input_manifest',{})
+        before={name:digest(safe_path(Path.cwd(),name)) for name in expected}
+        if before!=expected: raise ValueError('Public input hashes do not match request')
         spec = validate_spec(request["spec"])
         version = importlib.metadata.version(DISTRIBUTIONS[spec["engine"]])
         if version != spec["framework_version"]:
@@ -46,10 +49,14 @@ def main():
         )
         adapter = importlib.import_module("backtest_repair.adapters." + adapter_name)
         native = adapter.run(spec, bars, recorder)
+        after={name:digest(safe_path(Path.cwd(),name)) for name in expected}
+        if after!=expected: raise ValueError('Strategy modified declared public inputs during execution')
         dump_json(
             output,
             {
                 "status": "ok",
+                "request_id": request.get('request_id'),
+                "input_integrity": {"status":"pass","files":len(expected)},
                 "engine": spec["engine"],
                 "version": version,
                 "events": recorder.events,
@@ -65,6 +72,7 @@ def main():
             output,
             {
                 "status": getattr(exc, "status", "execution_error"),
+                "request_id": request.get('request_id'),
                 "error": str(exc),
                 "traceback": traceback.format_exc(),
                 "events": [],

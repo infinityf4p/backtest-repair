@@ -80,6 +80,12 @@ def run(spec, bars, rec):
     engine.broker.set_coc(cfg.get("trade_on_close", False))
     engine.adddata(bt.feeds.PandasData(dataname=frame(bars)))
     engine.addstrategy(cls, **spec.get("parameters", {}))
+    if spec.get('sizer'):
+        from importlib import import_module
+        module, name=spec['sizer']['entrypoint'].split(':')
+        sizer=getattr(import_module(module),name)
+        if not issubclass(sizer,bt.Sizer): raise ValueError('Configured sizer must inherit backtrader.Sizer')
+        engine.addsizer(sizer,**spec['sizer'].get('parameters',{}))
     engine.addanalyzer(Observe)
     strategy = engine.run(runonce=False)[0]
     # A final-bar submission may never produce a notification. Capture the native order object.

@@ -9,7 +9,7 @@
   "clock": {
     "timezone": "UTC",
     "frequency": "5m",
-    "bar_label": "session_date",
+    "bar_label": "bar_start",
     "instrument": "BTC/USDT",
     "session_open": "00:00:00",
     "session_close": "00:00:00"
@@ -65,6 +65,13 @@
     "editable_methods": [
       "Strategy004.populate_indicators"
     ],
-    "preserve_conditions": true
+    "preserve_conditions": true,
+    "mutable_indicators": [
+      "mean-volume"
+    ]
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
   }
 }

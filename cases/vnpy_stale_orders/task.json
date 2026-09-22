@@ -9,7 +9,7 @@
   "clock": {
     "timezone": "UTC",
     "frequency": "1m",
-    "bar_label": "session_date",
+    "bar_label": "bar_start",
     "instrument": "ETHUSDT.LOCAL",
     "session_open": "00:00:00",
     "session_close": "00:00:00"
@@ -47,5 +47,9 @@
       "DoubleMaStrategy.on_bar"
     ],
     "preserve_conditions": true
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
   }
 }

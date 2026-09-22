@@ -1,8 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
 import hashlib
-import base64
-import zlib
 import io
 import json
 import os
@@ -16,6 +14,7 @@ import uuid
 
 from .contracts import (
     dump_json,
+    digest,
     load_json,
     read_bars,
     safe_path,
@@ -137,6 +136,12 @@ class Runner:
         dump_json(
             folder / "request.json",
             {
+                "request_id": run_id,
+                "input_manifest": {
+                    p.relative_to(candidate).as_posix(): digest(p)
+                    for p in candidate.rglob("*")
+                    if p.is_file()
+                },
                 "spec": spec,
                 "seed": seed,
                 "instrument": instrument,
@@ -267,6 +272,11 @@ class Runner:
         else:
             raise ValueError("Runner mode must be local, docker or ssh_docker")
         start = time.monotonic()
+        result = {
+            "status": "infra_error",
+            "events": [],
+            "error": "Execution interrupted",
+        }
         try:
             with (
                 (folder / "stdout.log").open("w", encoding="utf-8") as out,
@@ -301,32 +311,12 @@ class Runner:
                                 self.budget.remaining_seconds(),
                             ),
                         )
-                    stdout = proc.stdout.decode("utf-8", "replace")
-                    compressed = next((line[len("BTR_GZIP:"):] for line in reversed(stdout.splitlines()) if line.startswith("BTR_GZIP:")), None)
-                    if compressed:
-                        inflater = zlib.decompressobj(16 + zlib.MAX_WBITS)
-                        decoded_bytes = inflater.decompress(base64.b64decode(compressed, validate=True), 64 * 1024 * 1024 + 1)
-                        if len(decoded_bytes) > 64 * 1024 * 1024 or not inflater.eof:
-                            raise ValueError("Native result exceeds limit or is truncated")
-                        decoded = json.loads(decoded_bytes)
-                        out.write(decoded.pop("native_stdout", ""))
-                        err.write(decoded.pop("native_stderr", ""))
-                        dump_json(result_path, decoded)
-                    marker = next(
-                        (
-                            line[len("BTR_RESULT:") :]
-                            for line in reversed(stdout.splitlines())
-                            if line.startswith("BTR_RESULT:")
-                        ),
-                        None,
-                    )
-                    if marker:
-                        decoded = json.loads(base64.b64decode(marker))
-                        out.write(decoded.pop("native_stdout", ""))
-                        err.write(decoded.pop("native_stderr", ""))
-                        dump_json(result_path, decoded)
-                    elif not compressed:
-                        out.write(stdout[-20000:])
+                    from .transport import decode_frame
+
+                    decoded = decode_frame(proc.stdout, run_id)
+                    out.write(decoded.pop("native_stdout", ""))
+                    err.write(decoded.pop("native_stderr", ""))
+                    dump_json(result_path, decoded)
                 else:
                     proc = subprocess.run(
                         command,
@@ -355,10 +345,19 @@ class Runner:
                 "events": [],
                 "error": "Worker wall-clock timeout",
             }
-            if self.mode in {"docker", "ssh_docker"}:
+        except Exception as exc:
+            result = {"status": "infra_error", "events": [], "error": str(exc)}
+        finally:
+            # Any interrupted transport can leave a container alive, not just timeouts.
+            if self.mode in {"docker", "ssh_docker"} and (
+                not result_path.exists()
+                or result.get("status") in {"infra_error", "timeout"}
+            ):
                 try:
                     cleanup = ["docker", "rm", "--force", container_name]
                     if remote_command:
+                        from .remote import execute
+
                         execute(self.runtime["remote"], shlex.join(cleanup), timeout=20)
                     elif self.mode == "ssh_docker":
                         subprocess.run(
@@ -371,8 +370,17 @@ class Runner:
                         subprocess.run(cleanup, capture_output=True, timeout=20)
                 except Exception as exc:
                     result["cleanup_error"] = type(exc).__name__
-        except Exception as exc:
-            result = {"status": "infra_error", "events": [], "error": str(exc)}
+        if result.get("status") == "ok" and (
+            result.get("request_id") != run_id
+            or result.get("engine") != spec["engine"]
+            or result.get("version") != spec["framework_version"]
+            or result.get("input_integrity", {}).get("status") != "pass"
+        ):
+            result = {
+                "status": "infra_error",
+                "events": [],
+                "error": "Worker evidence identity/version/integrity mismatch",
+            }
         result.update(
             run_id=run_id,
             operation=operation,

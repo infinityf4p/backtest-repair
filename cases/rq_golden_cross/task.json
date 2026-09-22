@@ -1,0 +1,46 @@
+{
+  "task_id": "rq_golden_cross",
+  "engine": "rqalpha",
+  "framework_version": "6.4.0",
+  "entrypoint": "strategy",
+  "strategy_rules": "Preserve the complete published strategy class/module, default indicators, parameters, signal predicates, position sizing and order rules. Run on the declared historical instrument under the explicit native execution profile and costs. Report only demonstrated violations. Inactive paths are not proven correct.",
+  "execution_profile": "stock_current_close",
+  "accounting_profile": "cash_equity",
+  "clock": {
+    "timezone": "Asia/Shanghai",
+    "frequency": "1d",
+    "bar_label": "session_date",
+    "instrument": "000001.XSHE",
+    "session_open": "09:30:00",
+    "session_close": "15:00:00"
+  },
+  "position": {
+    "initial_cash": 100000,
+    "unit": 100,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.0003,
+    "minimum_fee": 5,
+    "sell_tax": 0.0005,
+    "slippage": 0
+  },
+  "warmup_bars": 121,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "parameters": {},
+  "external_strategy": true,
+  "public_files": [],
+  "repair_policy": {
+    "editable_methods": [],
+    "preserve_conditions": true
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
+  }
+}

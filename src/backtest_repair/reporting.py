@@ -21,6 +21,31 @@ svg{width:100%;height:auto;background:white;border:1px solid #d8e3e8;border-radi
 """
 
 
+def workflow_report(path, target=None):
+    """Render current content-addressed episodes or suite indexes, without credentials."""
+    path=Path(path)
+    if path.is_dir():
+        if (path/'episode.json').exists(): items=[load_json(path/'episode.json')]
+        else: items=[load_json(p) for p in sorted(path.glob('*/*/episode.json'))]
+    else:
+        value=load_json(path)
+        items=value if isinstance(value,list) else [value]
+    episodes=[item.get('episode',item) for item in items]
+    rows=[]
+    for episode in episodes:
+        evidence=episode.get('visible_evidence',episode.get('report',{}))
+        rows.append([escape(str(episode.get('case',''))),escape(str(episode.get('status',''))),str(episode.get('accepted',False)),str(episode.get('known_tokens',0)),*[escape(str(evidence.get(k,{}).get('status','n/a'))) for k in ('financial','invariants','causality','preservation')]])
+    content='<h1>Native strategy audit and repair</h1><p>Host-measured acceptance. Finite historical tests do not establish live profitability or universal correctness. Inconclusive outcomes remain separate from passes.</p>'
+    content+=table(['Strategy','Outcome','Accepted','Known tokens','Financial','Coverage / rules','Causality','Preservation'],rows)
+    for episode in episodes:
+        public={k:v for k,v in episode.items() if k not in {'execution_identity','artifact_directory'}}
+        content+='<details><summary>'+escape(str(episode.get('case','Evidence')))+'</summary><pre>'+escape(json.dumps(public,ensure_ascii=False,indent=2))+'</pre></details>'
+    target=Path(target) if target else (path/'report.html' if path.is_dir() else path.with_suffix('.html'))
+    target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_text(document('Backtest Repair evidence',content),encoding='utf-8')
+    return target
+
+
 def document(title, content, script=""):
     return (
         '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'

@@ -17,3 +17,4 @@ build/
 *.zip
 *.log
 .test-work/
+pytest-cache-files-*/

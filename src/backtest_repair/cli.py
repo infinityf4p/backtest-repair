@@ -46,7 +46,10 @@ def detect(project):
                             e
                             for key, e in [
                                 ("backtrader.Strategy", "backtrader"),
+                                ("backtrader.SignalStrategy", "backtrader"),
                                 ("backtesting.Strategy", "backtesting_py"),
+                                ("backtesting.lib.SignalStrategy", "backtesting_py"),
+                                ("backtesting.lib.TrailingStrategy", "backtesting_py"),
                                 ("vnpy_ctastrategy.CtaTemplate", "vnpy_cta"),
                                 ("freqtrade.strategy.IStrategy", "freqtrade"),
                             ]
@@ -76,7 +79,7 @@ def detect(project):
                 }
             )
     return {
-        "candidates": findings,
+        "candidates": list({(item["file"],item["engine"],item.get("class")):item for item in findings}.values()),
         "note": "Structural detection only. Public financial specification and pinned native validation are still required.",
     }
 
@@ -114,20 +117,39 @@ def main(argv=None):
         )
         item.add_argument("--seed", type=int, default=0)
         if name == "repair":
-            item.add_argument("--method", choices=["B1", "B2", "B3"], default="B3")
-            item.add_argument("--model", default="gpt-5.6-luna")
+            item.add_argument("--method", choices=["B3"], default="B3")
+            item.add_argument("--model", default="gpt-6-astra")
             item.add_argument("--effort", default="max")
             item.add_argument(
                 "--limits",
                 type=Path,
                 help="JSON with a limits object, or a plain limits mapping",
             )
+    suite = sub.add_parser("suite")
+    suite.add_argument("root", type=Path)
+    suite.add_argument("--runtime", required=True, type=Path)
+    suite.add_argument("--output", required=True, type=Path)
+    suite.add_argument(
+        "--action", choices=["baseline", "agents", "holdout", "all"], default="all"
+    )
+    suite.add_argument("--case", action="append")
+    suite.add_argument("--jobs", type=int, default=1)
+    suite.add_argument(
+        "--mode", choices=["local", "docker", "ssh_docker"], default="docker"
+    )
     report = sub.add_parser("report")
     report.add_argument("path", type=Path, help="Episode directory or aggregate.json")
     report.add_argument("--output", type=Path)
     a = p.parse_args(argv)
     try:
-        if a.command == "detect":
+        if a.command == "suite":
+            from .suite import run
+
+            credential_prompt(a.runtime, a.mode)
+            result = run(
+                a.root, load_json(a.runtime), a.output, a.action, a.case, a.jobs, a.mode
+            )
+        elif a.command == "detect":
             result = detect(a.project.resolve())
         elif a.command in {"validate", "inspect"}:
             spec = validate_spec(load_json(a.project / "task.json"))
@@ -139,23 +161,14 @@ def main(argv=None):
                 "capabilities": capabilities(spec),
             }
         elif a.command == "run":
-            from .runner import Runner, Budget
-            from .semantics import validate_trace
+            from .workflow import baseline
 
             credential_prompt(a.runtime, a.mode)
-            result = Runner(a.runtime, a.output, Budget(1, 300), a.mode).run(
-                a.project, seed=a.seed
-            )
-            result["checks"] = validate_trace(
-                validate_spec(load_json(a.project / "task.json")),
-                read_bars(a.project / "fixtures/bars.csv"),
-                result,
-            )
-            result.pop("packages", None)
-            result.pop("events", None)
+            result = baseline(a.project, load_json(a.runtime), a.output, mode=a.mode)[
+                "report"
+            ]
         elif a.command == "repair":
             from .agent import run_episode
-            from .reporting import episode_report
 
             credential_prompt(a.runtime, a.mode)
             limits = load_json(a.limits) if a.limits else {}
@@ -170,20 +183,19 @@ def main(argv=None):
                 a.effort,
                 limits.get("limits", limits),
             )
-            result["report"] = str(episode_report(a.output))
-        else:
-            from .reporting import dashboard, episode_report
 
-            target = (
-                dashboard(a.path, a.output)
-                if a.path.is_file()
-                else episode_report(a.path, a.output)
-            )
+        else:
+            from .reporting import workflow_report
+
+            target = workflow_report(a.path, a.output)
             result = {"report": str(target)}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         if a.command in {"run", "repair"} and result.get("status") not in {
             "ok",
             "submitted",
+            "pass",
+            "repaired",
+            "observed_no_violation",
         }:
             return 2 if result.get("status") in {"needs_spec", "out_of_scope"} else 1
         return 0

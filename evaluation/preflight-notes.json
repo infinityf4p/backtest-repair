@@ -1,0 +1,10 @@
+{
+  "agent_calls": 0,
+  "strategy_source_changes": 0,
+  "findings": [
+    "Unbounded future-price jumps invalidated an otherwise normal trailing-stop execution. Price perturbation changed to deterministic +/-4% while future volume is also perturbed.",
+    "RQAlpha MACD uses local indicator variables. Added observation of original public plot calls; original calculation and trading callbacks unchanged.",
+    "No-trade cases remain inconclusive; data/parameters were not selected for a passing result."
+  ],
+  "preflight_directory": "results/preflight-2026-09-22"
+}

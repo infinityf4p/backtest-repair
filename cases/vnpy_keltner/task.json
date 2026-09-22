@@ -1,0 +1,51 @@
+{
+  "task_id": "vnpy_keltner",
+  "engine": "vnpy_cta",
+  "framework_version": "1.4.1",
+  "entrypoint": "strategy:KingKeltnerStrategy",
+  "strategy_rules": "Preserve the complete published strategy class/module, default indicators, parameters, signal predicates, position sizing and order rules. Run on the declared historical instrument under the explicit native execution profile and costs. Report only demonstrated violations. Inactive paths are not proven correct.",
+  "execution_profile": "futures_bar_limit",
+  "accounting_profile": "linear_futures_pnl",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "1m",
+    "bar_label": "bar_start",
+    "instrument": "ETHUSDT.LOCAL",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.0004,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 100,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "parameters": {},
+  "external_strategy": true,
+  "public_files": [],
+  "repair_policy": {
+    "editable_methods": [],
+    "preserve_conditions": true
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
+  },
+  "observable_attributes": [
+    "kk_up",
+    "kk_down",
+    "atr_value"
+  ]
+}

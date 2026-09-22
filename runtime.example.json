@@ -1,6 +1,9 @@
 {
-  "vnpy_cta": {"image": "backtest-repair-defects/vnpy_cta:0.3.0"},
-  "freqtrade": {"image": "backtest-repair-defects/freqtrade:0.3.0"},
+  "backtrader": {"image": "backtest-repair-public/backtrader:0.4.0"},
+  "backtesting_py": {"image": "backtest-repair-public/backtesting_py:0.4.0"},
+  "vnpy_cta": {"image": "backtest-repair-public/vnpy_cta:0.4.0"},
+  "rqalpha": {"image": "backtest-repair-public/rqalpha:0.4.0"},
+  "freqtrade": {"image": "backtest-repair-public/freqtrade:0.4.0"},
   "worker_timeout": 180,
   "remote": {
     "transport": "paramiko",

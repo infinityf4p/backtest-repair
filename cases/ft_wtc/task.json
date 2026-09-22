@@ -1,0 +1,84 @@
+{
+  "task_id": "ft_wtc",
+  "engine": "freqtrade",
+  "framework_version": "2026.8",
+  "entrypoint": "strategy:wtc",
+  "strategy_rules": "Preserve WaveTrend/STOCH formulas, loaded upstream buy/sell parameters, 30m timeframe, ROI and stop. Any normalization used at bar t must use only rows through t; an expanding historical range is permitted, with finite handling for zero ranges. Do not tune profitability or delete entry/exit logic.",
+  "execution_profile": "spot_next_open_force_exit",
+  "accounting_profile": "cash_equity",
+  "clock": {
+    "timezone": "UTC",
+    "frequency": "30m",
+    "bar_label": "bar_start",
+    "instrument": "BTC/USDT",
+    "session_open": "00:00:00",
+    "session_close": "00:00:00"
+  },
+  "position": {
+    "initial_cash": 10000,
+    "unit": 1,
+    "multiplier": 1,
+    "price_tick": 0.01,
+    "stake": 1000,
+    "amount_decimals": 5
+  },
+  "costs": {
+    "fee_rate": 0.001,
+    "minimum_fee": 0,
+    "sell_tax": 0,
+    "slippage": 0
+  },
+  "warmup_bars": 50,
+  "modifiable_files": [
+    "strategy.py"
+  ],
+  "native_exit_rules": {
+    "minimal_roi": {
+      "0": 0.30873,
+      "569": 0.16689,
+      "3211": 0.06473,
+      "7617": 0
+    },
+    "stoploss": -0.128,
+    "use_exit_signal": true
+  },
+  "parameters": {},
+  "external_strategy": true,
+  "public_files": [],
+  "repair_policy": {
+    "editable_methods": [
+      "wtc.populate_indicators"
+    ],
+    "preserve_conditions": true,
+    "mutable_indicators": [
+      "wt1",
+      "wt2",
+      "slowk",
+      "def"
+    ],
+    "protected_fragments": [
+      "ap = (dataframe['high'] + dataframe['low'] + dataframe['close']) / 3",
+      "esa = ta.EMA(ap, 10)",
+      "d = ta.EMA((ap - esa).abs(), 10)",
+      "ci = (ap - esa).div(0.0015 * d)",
+      "tci = ta.EMA(ci, 21)",
+      "wt1 = tci",
+      "wt2 = ta.SMA(np.nan_to_num(wt1), 4)",
+      "dataframe['wt1'], dataframe['wt2'] = (wt1, wt2)",
+      "stoch = ta.STOCH(dataframe, 14)",
+      "slowk = stoch['slowk']",
+      "dataframe['slowk'] = slowk",
+      "dataframe['def'] = dataframe['slowk'] - dataframe['wt1']"
+    ]
+  },
+  "coverage_requirements": {
+    "decisions": 1,
+    "fills": 1
+  },
+  "indicator_columns": [
+    "slowk",
+    "def",
+    "wt1",
+    "wt2"
+  ]
+}

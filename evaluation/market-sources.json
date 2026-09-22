@@ -1,0 +1,110 @@
+[
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/5m/BTCUSDT-5m-2024-01.zip",
+    "raw_sha256": "a375f811f672ad70de97af533f6e70181647a9e978838b451ac17d5c17313ad8",
+    "bytes": 465498,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/30m/BTCUSDT-30m-2024-01.zip",
+    "raw_sha256": "bb22fd3bccf134270c6f69bce6da3f95787ca4f23ed5f0e339654d03b7a87706",
+    "bytes": 84347,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/futures/um/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2024-01-01.zip",
+    "raw_sha256": "db143263ed9be478acb69a3290318d20cee518dd930c8372857818642d50fe98",
+    "bytes": 61611,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/futures/um/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2023-12-31.zip",
+    "raw_sha256": "7e8850b44dde216bd2b5573aa42d62bc3b358f56d396e76969034f37f6406fb0",
+    "bytes": 61546,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://quotes.sina.cn/cn/api/jsonp_v2.php/var%20_data=/CN_MarketDataService.getKLineData?symbol=sz000001&scale=240&ma=no&datalen=1023",
+    "raw_sha256": "009ecc761570db6dc579e0f1294415285c8f39424308330075228aa8e8e5fd34",
+    "bytes": 107658,
+    "published_checksum_verified": false
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1h/BTCUSDT-1h-2024-01.zip",
+    "raw_sha256": "cf873a185bd5b24b8e00034e49583fcb49928e0c3a45c6fc27a632a683655417",
+    "bytes": 43482,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1h/BTCUSDT-1h-2024-02.zip",
+    "raw_sha256": "b83aa7319ef1d4baa7b923c0fe802b88dfaf241c7456af295f1f656a24379b33",
+    "bytes": 40711,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1h/BTCUSDT-1h-2024-03.zip",
+    "raw_sha256": "b0851daf609d6ab82fdf8f1d1c4fbd974bc1b4e6530a832067516ac1c2be63a6",
+    "bytes": 44044,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1h/BTCUSDT-1h-2024-04.zip",
+    "raw_sha256": "e266707ad2ea3cd4680bf1ac5025f0c1bfeb38e703374a91f8dc193d1ec8d48f",
+    "bytes": 42474,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/5m/BTCUSDT-5m-2024-02.zip",
+    "raw_sha256": "4bbed105653be96229f6678b3ce3df7366a6ced5aea32285da2bf62ac5f890ed",
+    "bytes": 434210,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/futures/um/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2024-01-02.zip",
+    "raw_sha256": "572ae15a0ae64867f7bdec5ba7cfc0446eabf27c32c8ad5f9e1a28dad831e1cb",
+    "bytes": 63647,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-01.zip",
+    "raw_sha256": "1fdb3a8fa6b77ef30ef17ed4b71b184172ef1f812d83bd0f50bbd08e71a92057",
+    "bytes": 41245,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-02.zip",
+    "raw_sha256": "f080ff288b2f7e85e78c5370a8a3258b93f85531ff96b4131c1b7889649a8ba4",
+    "bytes": 38782,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-03.zip",
+    "raw_sha256": "4eb16ab0c5db15e5e0d77827f5c19c215c7ce601a5501d9563b75bda7602f46e",
+    "bytes": 42083,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-04.zip",
+    "raw_sha256": "8b710fad720ae0bc75eaded37b3add95ca49122ae398f3f6e33e57e864da781e",
+    "bytes": 40291,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-05.zip",
+    "raw_sha256": "0307d64f0d9ae6ff4001442a014d7b02dcbc5a003dcc36ba139f1c9695996b51",
+    "bytes": 41346,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2024-06.zip",
+    "raw_sha256": "59ee6920bd72d93d1130c89711c93ea192bbfd5f82b548dcb0448f66450f6a06",
+    "bytes": 39586,
+    "published_checksum_verified": true
+  },
+  {
+    "source_url": "https://github.com/kernc/backtesting.py/blob/ca2e2611621e472542ba90f7243a1fa06a7d7108/backtesting/test/GOOG.csv",
+    "raw_sha256": "60e961a567490b157f71888df9e6afb36190a34a40a6286aa38988e2343f1b1a",
+    "bytes": 97833,
+    "published_checksum_verified": false
+  }
+]

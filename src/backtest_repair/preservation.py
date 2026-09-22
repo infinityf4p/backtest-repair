@@ -1,4 +1,5 @@
 """Conservative static protection of strategy parameters and unaffected behavior."""
+
 from __future__ import annotations
 import ast
 from collections import Counter
@@ -8,6 +9,7 @@ from pathlib import Path
 def _parts(path):
     tree = ast.parse(Path(path).read_text(encoding="utf-8-sig"))
     imports, declarations, methods, conditions = [], [], {}, []
+
     def visit_scope(nodes, prefix=""):
         for node in nodes:
             if isinstance(node, (ast.Import, ast.ImportFrom)):
@@ -15,16 +17,30 @@ def _parts(path):
             elif isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)):
                 declarations.append((prefix, ast.dump(node, include_attributes=False)))
             elif isinstance(node, ast.ClassDef):
-                declarations.append((prefix + node.name, repr([ast.dump(b, include_attributes=False) for b in node.bases])))
+                declarations.append(
+                    (
+                        prefix + node.name,
+                        repr(
+                            [ast.dump(b, include_attributes=False) for b in node.bases]
+                        ),
+                    )
+                )
                 visit_scope(node.body, prefix + node.name + ".")
             elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
                 name = prefix + node.name
                 methods[name] = ast.dump(node, include_attributes=False)
                 for child in ast.walk(node):
                     if isinstance(child, ast.Compare):
-                        conditions.append((name, ast.dump(child, include_attributes=False)))
-            elif not (isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant) and isinstance(node.value.value, str)):
+                        conditions.append(
+                            (name, ast.dump(child, include_attributes=False))
+                        )
+            elif not (
+                isinstance(node, ast.Expr)
+                and isinstance(node.value, ast.Constant)
+                and isinstance(node.value.value, str)
+            ):
                 declarations.append((prefix, ast.dump(node, include_attributes=False)))
+
     visit_scope(tree.body)
     return imports, declarations, methods, Counter(conditions)
 
@@ -43,4 +59,53 @@ def check_preservation(original, candidate, policy=None):
             errors.append("Protected method changed: " + name)
     if policy.get("preserve_conditions", True) and before[3] != after[3]:
         errors.append("Trading comparison predicates changed")
-    return {"status": "fail" if errors else "pass", "errors": errors, "editable_methods": sorted(editable)}
+    old_tree = ast.parse(Path(original).read_text(encoding="utf-8-sig"))
+    new_tree = ast.parse(Path(candidate).read_text(encoding="utf-8-sig"))
+
+    def unsafe(tree):
+        return Counter(
+            ast.dump(n, include_attributes=False)
+            for n in ast.walk(tree)
+            if isinstance(n, (ast.Import, ast.ImportFrom))
+            or isinstance(n, ast.Call)
+            and (
+                ast.unparse(n.func).split(".")[-1]
+                in {
+                    "exec",
+                    "eval",
+                    "compile",
+                    "__import__",
+                    "open",
+                    "write_text",
+                    "write_bytes",
+                    "unlink",
+                    "system",
+                    "popen",
+                    "setattr",
+                    "delattr",
+                }
+                or "backtest_repair" in ast.unparse(n.func)
+            )
+        )
+
+    if unsafe(new_tree) - unsafe(old_tree):
+        errors.append(
+            "New dynamic code, import or filesystem mutation is not permitted"
+        )
+    statements = Counter(
+        ast.dump(n, include_attributes=False)
+        for n in ast.walk(new_tree)
+        if isinstance(n, ast.stmt)
+    )
+    for fragment in policy.get("protected_fragments", []):
+        for node in ast.parse(fragment).body:
+            if not statements[ast.dump(node, include_attributes=False)]:
+                errors.append(
+                    "Protected indicator calculation changed: "
+                    + ast.unparse(node)[:100]
+                )
+    return {
+        "status": "fail" if errors else "pass",
+        "errors": errors,
+        "editable_methods": sorted(editable),
+    }

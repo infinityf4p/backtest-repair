@@ -59,7 +59,7 @@ class Recorder:
             series = getattr(obj, name, None)
             if series is not None:
                 try:
-                    number = float(series[-1])
+                    number = float(series[0 if self.spec["engine"]=="backtrader" else -1])
                 except (TypeError, IndexError):
                     number = float(series)
                 import math

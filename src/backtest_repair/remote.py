@@ -4,7 +4,7 @@ import os
 import time
 
 
-def execute(config, command, payload=b"", timeout=120, log=None):
+def execute(config, command, payload=b"", timeout=120, log=None, max_output_bytes=64*1024*1024):
     import paramiko
 
     client = paramiko.SSHClient()
@@ -44,6 +44,7 @@ def execute(config, command, payload=b"", timeout=120, log=None):
             channel.sendall(payload)
         channel.shutdown_write()
         output, errors, start = [], [], time.monotonic()
+        received=0
         while True:
             if time.monotonic() - start > timeout:
                 channel.close()
@@ -51,15 +52,20 @@ def execute(config, command, payload=b"", timeout=120, log=None):
             if channel.recv_ready():
                 data = channel.recv(65536)
                 output.append(data)
+                received+=len(data)
                 if log:
                     log.write(data.decode("utf-8", "replace"))
                     log.flush()
             if channel.recv_stderr_ready():
                 data = channel.recv_stderr(65536)
                 errors.append(data)
+                received+=len(data)
                 if log:
                     log.write(data.decode("utf-8", "replace"))
                     log.flush()
+            if received>max_output_bytes:
+                channel.close()
+                raise ValueError('Remote output exceeded byte limit')
             if (
                 (channel.eof_received or channel.closed)
                 and channel.exit_status_ready()
