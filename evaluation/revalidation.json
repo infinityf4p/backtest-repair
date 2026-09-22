@@ -1,0 +1,1610 @@
+{
+  "mode": "offline recheck of saved native results and exact experiment fixtures",
+  "model_calls": 0,
+  "native_calls": 0,
+  "checker": "18c35b1513c12eb09de5c56ea5dd2463e3b2dc89f43fe81ce79b74c3fb2e2fe2",
+  "cases": 20,
+  "accepted": 16,
+  "all_acceptance_consistent": true,
+  "additional_experiments": 4,
+  "results": [
+    {
+      "case": "vnpy_stale_orders",
+      "accepted": true,
+      "original_episode_status": "repaired",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "10e01abfe973",
+          "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+          "equity": 9852.677684000002,
+          "position": 1.0,
+          "fills": 139,
+          "trades": null,
+          "elapsed_seconds": 6.344000000040978
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 139,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1440,
+                "orders": 147,
+                "fills": 139
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            },
+            "order_lifetime": {
+              "decisions": 1440,
+              "distinct_stale_orders": 0,
+              "max_abs_position_observed": 1.0,
+              "native_fill_count": 139
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-01T11:59:00",
+          "prefix_bars": 720,
+          "observable_values": 1440,
+          "fill_count": 59,
+          "order_count": 61,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "10e01abfe973",
+          "prefix_run_id": "db76890be407",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [
+            "DoubleMaStrategy.on_bar"
+          ],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 2880,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "1d4796e6532f",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "adx_missing_exit",
+      "accepted": true,
+      "original_episode_status": "repaired",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "82ca93f6d47d6f7fcfa89ab5504b961940e34887232b3306116cb24a2e496f74",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "f5a01a79fa18",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 10140.499759,
+          "position": 0.0,
+          "fills": 48,
+          "trades": 24,
+          "elapsed_seconds": 8.73499999998603
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 48,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 2184,
+                "orders": 48,
+                "fills": 48
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            },
+            "enter_long": {
+              "predicate_true_bars": 265,
+              "emitted_signals": 265
+            },
+            "exit_long": {
+              "predicate_true_bars": 2,
+              "emitted_signals": 2
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-02-15T11:00:00",
+          "prefix_bars": 1092,
+          "observable_values": 7644,
+          "fill_count": 24,
+          "order_count": 24,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "f5a01a79fa18",
+          "prefix_run_id": "de7b780fffa6",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [
+            "ADXMomentun.populate_sell_trend"
+          ],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 10920,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "ee95b19bdc43",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "volume_lookahead",
+      "accepted": true,
+      "original_episode_status": "repaired",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "95a81e65064b20f5cfb347d2927604dc1b39cf59d7e7cbbdadd99640cbadfa65",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "110a429939ea",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 10036.12397801,
+          "position": 0.0,
+          "fills": 14,
+          "trades": 7,
+          "elapsed_seconds": 18.186999999918044
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 14,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 8928,
+                "orders": 14,
+                "fills": 14
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            },
+            "mean-volume": {
+              "observations": 8917,
+              "window": 12
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-16T11:55:00",
+          "prefix_bars": 4464,
+          "observable_values": 40176,
+          "fill_count": 5,
+          "order_count": 5,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "110a429939ea",
+          "prefix_run_id": "1fd71b4f447e",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [
+            "Strategy004.populate_indicators"
+          ],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 53568,
+            "exceptions": [
+              "mean-volume"
+            ],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "bt_stop",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "5d4fd2da2abed3e6452ff76c977bd3c0c4378a495938054f65feea040e010e88",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "2b97abd8af19",
+          "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+          "equity": 10114.532086799998,
+          "position": 1.0,
+          "fills": 17,
+          "trades": null,
+          "elapsed_seconds": 5.094000000040978
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 17,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1600,
+                "orders": 18,
+                "fills": 17
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 0,
+          "fill_count": 5,
+          "order_count": 6,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "2b97abd8af19",
+          "prefix_run_id": "d0f62ab1fd1b",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 0,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "b35ff09ca8e6",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "bt_macd",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "9cdbd1e2a33d2a87f2d871a7ebf6af9bac9bab50ed52ddadaf474739780567da",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "0c83a819fafe",
+          "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+          "equity": 12554.223599999998,
+          "position": 4.0,
+          "fills": 47,
+          "trades": null,
+          "elapsed_seconds": 7.453000000095926
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 47,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1600,
+                "orders": 47,
+                "fills": 47
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 4000,
+          "fill_count": 21,
+          "order_count": 21,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "0c83a819fafe",
+          "prefix_run_id": "366b3c7ae95d",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 8000,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "bt_signal_sma",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "71e72541dceaf5af48d14c29f1655481e03105b7b20e031e42512cb8aec6052e",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "53a2ea10832c",
+          "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+          "equity": 10701.86188,
+          "position": 1.0,
+          "fills": 69,
+          "trades": null,
+          "elapsed_seconds": 5.969000000040978
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 69,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1600,
+                "orders": 69,
+                "fills": 69
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 0,
+          "fill_count": 33,
+          "order_count": 33,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "53a2ea10832c",
+          "prefix_run_id": "a14164bb1a8a",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 0,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "btpy_sma",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "121274efdf4b7d6ab49d1eaf6491d28bc409342a978fc9a2a8b11cc5bf69f12c",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "c24b079800be",
+          "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+          "equity": 51483.44854000006,
+          "position": 85.0,
+          "fills": 139,
+          "trades": 69,
+          "elapsed_seconds": 5.655999999959022
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 139,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1580,
+                "orders": 139,
+                "fills": 139
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 1560,
+          "fill_count": 67,
+          "order_count": 67,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "c24b079800be",
+          "prefix_run_id": "5877d13a8c5d",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 3160,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "btpy_multitimeframe",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "3fea33df046ece583762a6869938eb2c8cac5dbba707d9db2cb274293e06cca1",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "72f53278cc17",
+          "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+          "equity": 9939.0271,
+          "position": 0.0,
+          "fills": 8,
+          "trades": 4,
+          "elapsed_seconds": 6.484000000054948
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 8,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1500,
+                "orders": 12,
+                "fills": 8
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 4200,
+          "fill_count": 8,
+          "order_count": 12,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "72f53278cc17",
+          "prefix_run_id": "6b20040f205e",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 9000,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "712ef39b14fe",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "btpy_trailing",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 2,
+      "report": {
+        "source_sha256": "450a4f1cd915282fb8e373d1ffdbf697719edea2e5722244800c93cf4aceb801",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "a918c19f6162",
+          "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+          "equity": 50225.0139336,
+          "position": 79.0,
+          "fills": 57,
+          "trades": 28,
+          "elapsed_seconds": 9.827999999979511
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 57,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1599,
+                "orders": 571,
+                "fills": 57
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2007-10-22",
+          "prefix_bars": 800,
+          "observable_values": 0,
+          "fill_count": 32,
+          "order_count": 312,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "a918c19f6162",
+          "prefix_run_id": "d990b53a8f7b",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": [
+            {
+              "kind": "future",
+              "fraction": 0.25,
+              "result": {
+                "status": "pass",
+                "compared_through": "2006-03-21",
+                "prefix_bars": 400,
+                "observable_values": 0,
+                "fill_count": 15,
+                "order_count": 140,
+                "difference_count": 0,
+                "examples": [],
+                "full_run_id": "a918c19f6162",
+                "prefix_run_id": "1c1021a473d8",
+                "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+                "source_sha256": "450a4f1cd915282fb8e373d1ffdbf697719edea2e5722244800c93cf4aceb801"
+              }
+            },
+            {
+              "kind": "future",
+              "fraction": 0.375,
+              "result": {
+                "status": "pass",
+                "compared_through": "2007-01-05",
+                "prefix_bars": 600,
+                "observable_values": 0,
+                "fill_count": 24,
+                "order_count": 236,
+                "difference_count": 0,
+                "examples": [],
+                "full_run_id": "a918c19f6162",
+                "prefix_run_id": "12e5d6be4153",
+                "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+                "source_sha256": "450a4f1cd915282fb8e373d1ffdbf697719edea2e5722244800c93cf4aceb801"
+              }
+            }
+          ]
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 0,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "vnpy_atr_rsi",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "843531a10ea86df042b53ffdd4e4a0ff3ac4eae9d82fc2ac7287c65cc187a603",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "8152fcdabd40",
+          "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+          "equity": 10023.591488,
+          "position": 1.0,
+          "fills": 11,
+          "trades": null,
+          "elapsed_seconds": 27.875
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 11,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1440,
+                "orders": 1415,
+                "fills": 11
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-01T11:59:00",
+          "prefix_bars": 720,
+          "observable_values": 2160,
+          "fill_count": 7,
+          "order_count": 695,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "8152fcdabd40",
+          "prefix_run_id": "cec4f46597ea",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 4320,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "vnpy_boll",
+      "accepted": false,
+      "original_episode_status": "inconclusive",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "65f92b096b345359906423704a9d2204f676c02986e159d60b66ec6d24fa9b46",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "ba36d4254922",
+          "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+          "equity": 10054.950499999999,
+          "position": 1.0,
+          "fills": 1,
+          "trades": null,
+          "elapsed_seconds": 6.14000000001397
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 1,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1440,
+                "orders": 93,
+                "fills": 1
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-01T11:59:00",
+          "prefix_bars": 720,
+          "observable_values": 2880,
+          "fill_count": 1,
+          "order_count": 45,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "ba36d4254922",
+          "prefix_run_id": "19b7f4a88cab",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 5760,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "vnpy_dual_thrust",
+      "accepted": false,
+      "original_episode_status": "inconclusive",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "aa99efa35b0ebca3420d900e3f95dcd1924a19cc7bb6e37b8a293d987f64ad0d",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "9236fb8a1bf5",
+          "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+          "equity": 10000.0,
+          "position": 0.0,
+          "fills": 0,
+          "trades": null,
+          "elapsed_seconds": 5.640999999945052
+        },
+        "financial": {
+          "status": "inconclusive",
+          "fills": 0,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "inconclusive",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1440,
+                "orders": 895,
+                "fills": 0
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-01T11:59:00",
+          "prefix_bars": 720,
+          "observable_values": 2160,
+          "fill_count": 0,
+          "order_count": 720,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "9236fb8a1bf5",
+          "prefix_run_id": "8ddcac535e56",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 4320,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "vnpy_keltner",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "a5607be4d276fbddce1787073b8e5b81bdb04c26f4124aac182359aaf7218ae7",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "2fbe67f545b9",
+          "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+          "equity": 10042.80412,
+          "position": 1.0,
+          "fills": 9,
+          "trades": null,
+          "elapsed_seconds": 5.89000000001397
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 9,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1440,
+                "orders": 294,
+                "fills": 9
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-01T11:59:00",
+          "prefix_bars": 720,
+          "observable_values": 1440,
+          "fill_count": 5,
+          "order_count": 147,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "2fbe67f545b9",
+          "prefix_run_id": "4e5e8afb8dca",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 2880,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "rq_golden_cross",
+      "accepted": false,
+      "original_episode_status": "inconclusive",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "6b4962ef4c1a",
+          "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+          "equity": 97762.10559999998,
+          "position": 9600.0,
+          "fills": 1,
+          "trades": null,
+          "elapsed_seconds": 7.875
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 1,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 117,
+                "orders": 1,
+                "fills": 1
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-03-29",
+          "prefix_bars": 58,
+          "observable_values": 116,
+          "fill_count": 1,
+          "order_count": 1,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "6b4962ef4c1a",
+          "prefix_run_id": "2fee863fe9ee",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 234,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "623cbc69f29e",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "rq_macd",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 1,
+      "report": {
+        "source_sha256": "66fd1df23d0e7ae789aa22d5f05462b5b54dae154501256176ebb9e328194b5f",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "a3e163424539",
+          "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+          "equity": 102832.34879999999,
+          "position": 0.0,
+          "fills": 2,
+          "trades": null,
+          "elapsed_seconds": 9.140999999945052
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 2,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 117,
+                "orders": 2,
+                "fills": 2
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-03-29",
+          "prefix_bars": 58,
+          "observable_values": 116,
+          "fill_count": 0,
+          "order_count": 0,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "a3e163424539",
+          "prefix_run_id": "f6b5494a0f67",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": [
+            {
+              "kind": "future",
+              "fraction": 0.9,
+              "result": {
+                "status": "pass",
+                "compared_through": "2024-06-12",
+                "prefix_bars": 105,
+                "observable_values": 210,
+                "fill_count": 2,
+                "order_count": 2,
+                "difference_count": 0,
+                "examples": [],
+                "full_run_id": "a3e163424539",
+                "prefix_run_id": "b88699be8e75",
+                "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+                "source_sha256": "66fd1df23d0e7ae789aa22d5f05462b5b54dae154501256176ebb9e328194b5f"
+              }
+            }
+          ]
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 234,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        },
+        "conformance": {
+          "status": "pass",
+          "plain_run_id": "bc7d61009b86",
+          "meaning": "Observation toggle preserves native final account and every native fill."
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "rq_buy_hold",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "f489d09db3ba762edba4e3a62204468af2e97b8ab59f6558fb1c08e46bbd0fb8",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "fc2293a5be54",
+          "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+          "equity": 110122.15959999998,
+          "position": 10800.0,
+          "fills": 1,
+          "trades": null,
+          "elapsed_seconds": 5.812000000034459
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 1,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 117,
+                "orders": 1,
+                "fills": 1
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-03-29",
+          "prefix_bars": 58,
+          "observable_values": 0,
+          "fill_count": 1,
+          "order_count": 1,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "fc2293a5be54",
+          "prefix_run_id": "76cafdc1c5ed",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 0,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "ft_wtc",
+      "accepted": true,
+      "original_episode_status": "repaired",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "879e7f987848e4266671a9880f44cbb004ba7b66b90171b814a8d5f153502522",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "d31b26c01bfd",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 9925.07749859,
+          "position": 0.0,
+          "fills": 8,
+          "trades": 4,
+          "elapsed_seconds": 8.125
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 8,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 1488,
+                "orders": 8,
+                "fills": 8
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-16T11:30:00",
+          "prefix_bars": 744,
+          "observable_values": 4464,
+          "fill_count": 3,
+          "order_count": 3,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "d31b26c01bfd",
+          "prefix_run_id": "e9ef90f19ef5",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [
+            "wtc.populate_indicators"
+          ],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 0,
+            "exceptions": [
+              "def",
+              "slowk",
+              "wt1",
+              "wt2"
+            ],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "ft_ema_ha",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "2357996e6594458e8db45b5f757918462afa3c998de9d06e2af0c009ddc4b80d",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "12a8cf0bcdae",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 9824.53630698,
+          "position": 0.0,
+          "fills": 38,
+          "trades": 19,
+          "elapsed_seconds": 13.718999999924563
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 38,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 8928,
+                "orders": 38,
+                "fills": 38
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-16T11:55:00",
+          "prefix_bars": 4464,
+          "observable_values": 31248,
+          "fill_count": 21,
+          "order_count": 21,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "12a8cf0bcdae",
+          "prefix_run_id": "bed688c21660",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 44640,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "ft_fisher_hammer",
+      "accepted": false,
+      "original_episode_status": "model_usage_unknown",
+      "additional_experiments": 1,
+      "report": {
+        "source_sha256": "d1ca86a4ceb68ef828b35490ce1112330dad209cc3bb1e1b6c303c21ab3d8a90",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "8cfbd3d6e45f",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 10000.03616627,
+          "position": 0.0,
+          "fills": 2,
+          "trades": 1,
+          "elapsed_seconds": 13.234000000054948
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 2,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 8928,
+                "orders": 2,
+                "fills": 2
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-01-16T11:55:00",
+          "prefix_bars": 4464,
+          "observable_values": 35712,
+          "fill_count": 0,
+          "order_count": 0,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "8cfbd3d6e45f",
+          "prefix_run_id": "4d1a96649fb0",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": [
+            {
+              "kind": "future",
+              "fraction": 0.9,
+              "result": {
+                "status": "pass",
+                "compared_through": "2024-01-28T21:30:00",
+                "prefix_bars": 8035,
+                "observable_values": 64280,
+                "fill_count": 1,
+                "order_count": 1,
+                "difference_count": 0,
+                "examples": [],
+                "full_run_id": "8cfbd3d6e45f",
+                "prefix_run_id": "7c0074b16b6b",
+                "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+                "source_sha256": "d1ca86a4ceb68ef828b35490ce1112330dad209cc3bb1e1b6c303c21ab3d8a90"
+              }
+            }
+          ]
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 53568,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    },
+    {
+      "case": "ft_bband_rsi",
+      "accepted": true,
+      "original_episode_status": "observed_no_violation",
+      "additional_experiments": 0,
+      "report": {
+        "source_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+        "baseline": {
+          "status": "ok",
+          "error": null,
+          "run_id": "abd854174feb",
+          "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+          "equity": 10092.71294472,
+          "position": 0.0,
+          "fills": 14,
+          "trades": 7,
+          "elapsed_seconds": 9.952999999979511
+        },
+        "financial": {
+          "status": "pass",
+          "fills": 14,
+          "errors": [],
+          "error_count": 0,
+          "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+        },
+        "invariants": {
+          "status": "pass",
+          "violation_count": 0,
+          "violation_kinds": {},
+          "examples": [],
+          "coverage": {
+            "execution": {
+              "observed": {
+                "decisions": 2184,
+                "orders": 14,
+                "fills": 14
+              },
+              "required": {
+                "decisions": 1,
+                "fills": 1
+              }
+            }
+          }
+        },
+        "causality": {
+          "status": "pass",
+          "compared_through": "2024-02-15T11:00:00",
+          "prefix_bars": 1092,
+          "observable_values": 6552,
+          "fill_count": 6,
+          "order_count": 6,
+          "difference_count": 0,
+          "examples": [],
+          "full_run_id": "abd854174feb",
+          "prefix_run_id": "2a3388b014ba",
+          "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+          "additional_probes": []
+        },
+        "preservation": {
+          "status": "pass",
+          "errors": [],
+          "editable_methods": [],
+          "indicators": {
+            "status": "pass",
+            "protected_values": 8736,
+            "exceptions": [],
+            "difference_count": 0,
+            "examples": []
+          }
+        }
+      },
+      "acceptance_consistent": true
+    }
+  ]
+}

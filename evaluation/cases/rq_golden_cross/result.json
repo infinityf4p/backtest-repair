@@ -1,0 +1,310 @@
+{
+  "case": "rq_golden_cross",
+  "engine": "rqalpha",
+  "source": {
+    "id": "rq_golden_cross",
+    "engine": "rqalpha",
+    "repository": "https://github.com/ricequant/rqalpha",
+    "commit": "a5fb4e43879c381e61131399dcc094d495c7080a",
+    "source_path": "rqalpha/examples/golden_cross.py",
+    "source_url": "https://github.com/ricequant/rqalpha/blob/a5fb4e43879c381e61131399dcc094d495c7080a/rqalpha/examples/golden_cross.py",
+    "license": {
+      "key": "other",
+      "name": "Other",
+      "spdx_id": "NOASSERTION",
+      "url": null,
+      "node_id": "MDc6TGljZW5zZTA="
+    },
+    "upstream_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "candidate_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "import_adaptation": [],
+    "dataset": "cn_stock",
+    "bars": 117,
+    "holdout_bars": 125,
+    "start": "2024-01-02",
+    "end": "2024-06-28",
+    "holdout_start": "2024-07-01",
+    "holdout_end": "2024-12-31",
+    "selection": "published example, no assumed bug label",
+    "conformance": true
+  },
+  "baseline": {
+    "source_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "baseline": {
+      "status": "ok",
+      "error": null,
+      "run_id": "6b4962ef4c1a",
+      "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+      "equity": 97762.10559999998,
+      "position": 9600.0,
+      "fills": 1,
+      "trades": null,
+      "elapsed_seconds": 7.875
+    },
+    "financial": {
+      "status": "pass",
+      "fills": 1,
+      "errors": [],
+      "error_count": 0,
+      "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+    },
+    "invariants": {
+      "status": "pass",
+      "violation_count": 0,
+      "violation_kinds": {},
+      "examples": [],
+      "coverage": {
+        "execution": {
+          "observed": {
+            "decisions": 117,
+            "orders": 1,
+            "fills": 1
+          },
+          "required": {
+            "decisions": 1,
+            "fills": 1
+          }
+        }
+      }
+    },
+    "causality": {
+      "status": "pass",
+      "compared_through": "2024-03-29",
+      "prefix_bars": 58,
+      "observable_values": 116,
+      "fill_count": 1,
+      "order_count": 1,
+      "difference_count": 0,
+      "examples": [],
+      "full_run_id": "6b4962ef4c1a",
+      "prefix_run_id": "2fee863fe9ee",
+      "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+      "probe": "future",
+      "fixture_kind": "diagnostic_future_transformation",
+      "cutoff_index": 57
+    },
+    "preservation": {
+      "status": "pass",
+      "errors": [],
+      "editable_methods": []
+    },
+    "conformance": {
+      "status": "pass",
+      "plain_run_id": "623cbc69f29e",
+      "meaning": "Observation toggle preserves native final account and every native fill."
+    },
+    "status": "pass"
+  },
+  "episode": {
+    "case": "rq_golden_cross",
+    "execution_identity": {
+      "key": "40274b32f43b1c16ea565dc30295cfdf1726146120be7710692cf75ae7857c28",
+      "inputs": {
+        "fixtures/bars.csv": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+        "fixtures/releases.csv": null,
+        "fixtures/warmup.csv": "29c40c9ed00c826db51e5bfef17eac7d4dda69d6b867e4c5831386594cddf6e2",
+        "strategy.py": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+        "task.json": "22ea8e086b8dec935cf94433a25f3c11c338fbe09d31fdfa278c75dd64a58eff"
+      },
+      "runtime": {
+        "image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6"
+      },
+      "worker_timeout": 180,
+      "policy": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "max",
+        "max_model_decisions": 5,
+        "max_tokens_per_episode": 50000,
+        "max_output_tokens_per_call": 6000,
+        "max_native_runs": 12,
+        "max_seconds": 1800,
+        "cutoff_fraction": 0.5,
+        "version": "0.4.0-twenty-public",
+        "strategy_count": 20,
+        "agent_episodes_per_strategy": 1,
+        "selection": "17 published examples plus 3 historical bug versions; WTC is a published known-lookahead example. One distinct original source per case. Not a random or production deployment sample.",
+        "holdout": "Later historical periods frozen before agent execution, never sent to model or used for repair feedback.",
+        "repetition_policy": "One agent episode per case. Identical native calls reused. Necessary patch/probe/holdout runs counted separately.",
+        "scope": "Single instrument under explicit native execution and fee profiles; no claim of live profitability or universal correctness.",
+        "conformance": true,
+        "mode": "ssh_docker"
+      },
+      "checker": "faa837252861f5ab03abd3cdd561d1d9464ff96bc5b948df1ff227679f0bcd53"
+    },
+    "status": "inconclusive",
+    "accepted": false,
+    "submission": {
+      "tool": "submit",
+      "diagnosis": "inconclusive",
+      "explanation": "Source remains unchanged. Although all reported checks and numerical coverage minima pass, the liquidation path has no observed order or fill. Insufficient exit coverage prevents a complete assessment. The causality result applies only to the measured observables and tested cutoff; no repair is supported by the evidence."
+    },
+    "error": null,
+    "known_tokens": 14227,
+    "usage_unknown": false,
+    "model_calls": 2,
+    "model_requested": "gpt-6-astra",
+    "effort": "max",
+    "native_calls": 3,
+    "seconds": 56.39000000001397,
+    "original_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "submitted_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "changed": false,
+    "visible_evidence": {
+      "source_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "6b4962ef4c1a",
+        "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+        "equity": 97762.10559999998,
+        "position": 9600.0,
+        "fills": 1,
+        "trades": null,
+        "elapsed_seconds": 7.875
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 1,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 117,
+              "orders": 1,
+              "fills": 1
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-03-29",
+        "prefix_bars": 58,
+        "observable_values": 116,
+        "fill_count": 1,
+        "order_count": 1,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "6b4962ef4c1a",
+        "prefix_run_id": "2fee863fe9ee",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 57
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 234,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "conformance": {
+        "status": "pass",
+        "plain_run_id": "623cbc69f29e",
+        "meaning": "Observation toggle preserves native final account and every native fill."
+      },
+      "status": "pass"
+    }
+  },
+  "holdout": {
+    "case": "rq_golden_cross",
+    "status": "pass",
+    "agent_accepted": false,
+    "submitted_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+    "data_identity": {
+      "bars.csv": "0c53cfec3b897e315424ce681165e4fbf2645995d5f72b51af0bfb3bc3e509b6",
+      "warmup.csv": "9d091eb53f45d28676448ff7b615e1d4997e9eeb92655deff4f9bc2b32096f38"
+    },
+    "data_start": "2024-07-01",
+    "data_end": "2024-12-31",
+    "used_for_agent_feedback": false,
+    "report": {
+      "source_sha256": "7bde9e456519417e9c24321c11c98d5ad865f19e2cf73519d20dbc42dccc4124",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "5a75a23df695",
+        "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+        "equity": 97646.1698,
+        "position": 8300.0,
+        "fills": 1,
+        "trades": null,
+        "elapsed_seconds": 8.15700000000652
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 1,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 125,
+              "orders": 1,
+              "fills": 1
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-09-26",
+        "prefix_bars": 62,
+        "observable_values": 124,
+        "fill_count": 0,
+        "order_count": 0,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "5a75a23df695",
+        "prefix_run_id": "d189222f81f1",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 61
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 250,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "status": "pass"
+    },
+    "native_calls": 2
+  }
+}

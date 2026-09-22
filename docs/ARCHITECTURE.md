@@ -30,7 +30,7 @@ An OS file lock prevents two processes from running the same episode. JSON check
 
 ## Evidence and counterexamples
 
-The initial diagnostic changes only bars strictly after a visible cutoff, preserves history and native end time, then compares observations through the cutoff itself. Modified future candles are explicitly diagnostic transformations of historical data. They are not additional real market samples. The model can request a prefix experiment or a different cutoff with a stated hypothesis. `localize` tries two earlier cutoffs without discarding required history; it does not claim global counterexample minimality.
+The initial diagnostic changes only bars strictly after a visible cutoff, preserves history and native end time, then compares observations through the cutoff itself. Modified future candles are explicitly diagnostic transformations of historical data. They are not additional real market samples. The model can request a prefix experiment or a different cutoff with a stated hypothesis. Every requested experiment enters the mandatory validation plan. A later patch is checked against all those cutoffs; a default passing probe cannot erase another failed/inconclusive experiment, and old-source evidence cannot validate a new candidate. `localize` tries two earlier cutoffs without discarding required history; it does not claim global counterexample minimality.
 
 End-of-run forced exits are excluded only when explicitly identified; signals and indicators at the boundary remain checked. Missing observations or unexercised required paths are inconclusive. A full native ledger reconciles fees, account observations and fills. Freqtrade's observed ROI/stop/exit configuration must match the public specification.
 

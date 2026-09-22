@@ -311,6 +311,7 @@ class Evaluation:
         other = self.native(project, bars=changed)
         check = prefix_check(full, other, bars, count)
         check.update(
+            source_sha256=digest(Path(project) / "strategy.py"),
             probe=kind,
             fixture_kind="historical_prefix"
             if kind == "prefix"
@@ -319,7 +320,7 @@ class Evaluation:
         )
         return check
 
-    def check(self, project, original=None, original_full=None):
+    def check(self, project, original=None, original_full=None, extra_probes=()):
         project = Path(project)
         original = Path(original or project)
         spec = load_json(project / "task.json")
@@ -346,6 +347,28 @@ class Evaluation:
             "causality": self.probe(project, full),
             "preservation": preservation,
         }
+        additional = [
+            {
+                **probe,
+                "result": self.probe(
+                    project, full, fraction=probe["fraction"], kind=probe["kind"]
+                ),
+            }
+            for probe in extra_probes
+        ]
+        if additional:
+            result["causality"]["additional_probes"] = additional
+            statuses = [
+                result["causality"]["status"],
+                *[p["result"]["status"] for p in additional],
+            ]
+            result["causality"]["status"] = (
+                "fail"
+                if "fail" in statuses
+                else "pass"
+                if all(s == "pass" for s in statuses)
+                else "inconclusive"
+            )
         if self.policy.get("conformance", False):
             result["conformance"] = conformance_check(
                 full, self.native(project, instrument=False)

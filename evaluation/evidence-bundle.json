@@ -1,0 +1,8 @@
+{
+  "filename": "backtest-repair-twenty-evidence.zip",
+  "sha256": "3d37189d7dc93135baac8439c110ff8812bfcdc8a4b307b98e842c4617628e0f",
+  "bytes": 33926459,
+  "files": 1080,
+  "source_commit": "a118253d9335628169e824b78b6d5ab206507a3c",
+  "postrun_checker": "18c35b1513c12eb09de5c56ea5dd2463e3b2dc89f43fe81ce79b74c3fb2e2fe2"
+}

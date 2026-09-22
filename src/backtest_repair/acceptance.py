@@ -6,7 +6,9 @@ from __future__ import annotations
 REQUIRED_CHECKS = ("financial", "invariants", "causality", "preservation")
 
 
-def validate_submission(diagnosis, original_hash, candidate_hash, checked_hash, report):
+def validate_submission(
+    diagnosis, original_hash, candidate_hash, checked_hash, report, required_probes=()
+):
     if diagnosis not in {
         "observed_no_violation",
         "repaired",
@@ -35,4 +37,20 @@ def validate_submission(diagnosis, original_hash, candidate_hash, checked_hash, 
     ]
     if failed:
         raise ValueError("Submission requires passing checks: " + ", ".join(failed))
+    measured = {}
+    for item in report.get("causality", {}).get("additional_probes", []):
+        key = (item["kind"], item["fraction"])
+        result = item["result"]
+        if (
+            result.get("status") != "pass"
+            or result.get("source_sha256") != candidate_hash
+        ):
+            raise ValueError(
+                "An additional experiment failed, is inconclusive, or belongs to an older candidate"
+            )
+        measured[key] = result
+    if any((p["kind"], p["fraction"]) not in measured for p in required_probes):
+        raise ValueError(
+            "Check the current candidate against every requested experiment before submitting"
+        )
     return {"status": diagnosis, "accepted": True}

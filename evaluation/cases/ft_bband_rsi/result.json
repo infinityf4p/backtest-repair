@@ -1,0 +1,299 @@
+{
+  "case": "ft_bband_rsi",
+  "engine": "freqtrade",
+  "source": {
+    "id": "ft_bband_rsi",
+    "engine": "freqtrade",
+    "repository": "https://github.com/freqtrade/freqtrade-strategies",
+    "commit": "f3340ce11f5bdf62f598522e64d1f5638eaa13f5",
+    "source_path": "user_data/strategies/berlinguyinca/BbandRsi.py",
+    "source_url": "https://github.com/freqtrade/freqtrade-strategies/blob/f3340ce11f5bdf62f598522e64d1f5638eaa13f5/user_data/strategies/berlinguyinca/BbandRsi.py",
+    "license": {
+      "key": "gpl-3.0",
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0",
+      "url": "https://api.github.com/licenses/gpl-3.0",
+      "node_id": "MDc6TGljZW5zZTk="
+    },
+    "upstream_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "candidate_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "import_adaptation": [],
+    "dataset": "eth_1h",
+    "bars": 2184,
+    "holdout_bars": 2184,
+    "start": "2024-01-01T00:00:00",
+    "end": "2024-03-31T23:00:00",
+    "holdout_start": "2024-04-01T00:00:00",
+    "holdout_end": "2024-06-30T23:00:00",
+    "selection": "published example, no assumed bug label",
+    "conformance": false
+  },
+  "baseline": {
+    "source_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "baseline": {
+      "status": "ok",
+      "error": null,
+      "run_id": "abd854174feb",
+      "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+      "equity": 10092.71294472,
+      "position": 0.0,
+      "fills": 14,
+      "trades": 7,
+      "elapsed_seconds": 9.952999999979511
+    },
+    "financial": {
+      "status": "pass",
+      "fills": 14,
+      "errors": [],
+      "error_count": 0,
+      "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+    },
+    "invariants": {
+      "status": "pass",
+      "violation_count": 0,
+      "violation_kinds": {},
+      "examples": [],
+      "coverage": {
+        "execution": {
+          "observed": {
+            "decisions": 2184,
+            "orders": 14,
+            "fills": 14
+          },
+          "required": {
+            "decisions": 1,
+            "fills": 1
+          }
+        }
+      }
+    },
+    "causality": {
+      "status": "pass",
+      "compared_through": "2024-02-15T11:00:00",
+      "prefix_bars": 1092,
+      "observable_values": 6552,
+      "fill_count": 6,
+      "order_count": 6,
+      "difference_count": 0,
+      "examples": [],
+      "full_run_id": "abd854174feb",
+      "prefix_run_id": "2a3388b014ba",
+      "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+      "probe": "future",
+      "fixture_kind": "diagnostic_future_transformation",
+      "cutoff_index": 1091
+    },
+    "preservation": {
+      "status": "pass",
+      "errors": [],
+      "editable_methods": []
+    },
+    "status": "pass"
+  },
+  "episode": {
+    "case": "ft_bband_rsi",
+    "execution_identity": {
+      "key": "36ed37b360bb18657c1f09b2933de4258d61b00ec3e6c683547f2b195c50d711",
+      "inputs": {
+        "fixtures/bars.csv": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+        "fixtures/releases.csv": null,
+        "fixtures/warmup.csv": null,
+        "strategy.py": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+        "task.json": "c92062dab5fb456bf9fd35f5706a2cf8a213015d9124600fac13a7dcd235b1e7"
+      },
+      "runtime": {
+        "image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e"
+      },
+      "worker_timeout": 180,
+      "policy": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "max",
+        "max_model_decisions": 5,
+        "max_tokens_per_episode": 50000,
+        "max_output_tokens_per_call": 6000,
+        "max_native_runs": 12,
+        "max_seconds": 1800,
+        "cutoff_fraction": 0.5,
+        "version": "0.4.0-twenty-public",
+        "strategy_count": 20,
+        "agent_episodes_per_strategy": 1,
+        "selection": "17 published examples plus 3 historical bug versions; WTC is a published known-lookahead example. One distinct original source per case. Not a random or production deployment sample.",
+        "holdout": "Later historical periods frozen before agent execution, never sent to model or used for repair feedback.",
+        "repetition_policy": "One agent episode per case. Identical native calls reused. Necessary patch/probe/holdout runs counted separately.",
+        "scope": "Single instrument under explicit native execution and fee profiles; no claim of live profitability or universal correctness.",
+        "conformance": false,
+        "mode": "ssh_docker"
+      },
+      "checker": "faa837252861f5ab03abd3cdd561d1d9464ff96bc5b948df1ff227679f0bcd53"
+    },
+    "status": "observed_no_violation",
+    "accepted": true,
+    "submission": {
+      "tool": "submit",
+      "diagnosis": "observed_no_violation",
+      "explanation": "Source remains unchanged and all mandatory checks pass, with observed trading coverage exceeding the declared requirements. No repair is supported by the evidence. The future-perturbation comparison is a finite diagnostic: inactive paths, individual exit branches and hidden internal state are not fully verified, and no profitability claim is made."
+    },
+    "error": null,
+    "known_tokens": 13931,
+    "usage_unknown": false,
+    "model_calls": 2,
+    "model_requested": "gpt-6-astra",
+    "effort": "max",
+    "native_calls": 2,
+    "seconds": 57.45400000002701,
+    "original_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "submitted_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "changed": false,
+    "visible_evidence": {
+      "source_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "abd854174feb",
+        "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+        "equity": 10092.71294472,
+        "position": 0.0,
+        "fills": 14,
+        "trades": 7,
+        "elapsed_seconds": 9.952999999979511
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 14,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 2184,
+              "orders": 14,
+              "fills": 14
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-02-15T11:00:00",
+        "prefix_bars": 1092,
+        "observable_values": 6552,
+        "fill_count": 6,
+        "order_count": 6,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "abd854174feb",
+        "prefix_run_id": "2a3388b014ba",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 1091
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 8736,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "status": "pass"
+    }
+  },
+  "holdout": {
+    "case": "ft_bband_rsi",
+    "status": "pass",
+    "agent_accepted": true,
+    "submitted_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+    "data_identity": {
+      "bars.csv": "ab112b50a319b62a7fde8dcf9fd77ad886233dd9fe0a4534573a026ae2824228"
+    },
+    "data_start": "2024-04-01T00:00:00",
+    "data_end": "2024-06-30T23:00:00",
+    "used_for_agent_feedback": false,
+    "report": {
+      "source_sha256": "65718e8d0c14094b67be82b66238ea60a4af4bbf6fd9a6e1879dad5c48125547",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "d6e4f6b74bf9",
+        "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+        "equity": 10015.64197788,
+        "position": 0.0,
+        "fills": 18,
+        "trades": 9,
+        "elapsed_seconds": 7.907000000006519
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 18,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 2184,
+              "orders": 18,
+              "fills": 18
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-05-16T11:00:00",
+        "prefix_bars": 1092,
+        "observable_values": 6552,
+        "fill_count": 10,
+        "order_count": 10,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "d6e4f6b74bf9",
+        "prefix_run_id": "d0c796f0e8a1",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 1091
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 8736,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "status": "pass"
+    },
+    "native_calls": 2
+  }
+}

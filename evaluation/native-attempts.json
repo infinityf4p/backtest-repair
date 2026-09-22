@@ -1,0 +1,1910 @@
+[
+  {
+    "status": "ok",
+    "request_id": "06dcfac891e8",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "06dcfac891e8",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "1e8d618aeda97e0acbf547afe7240e760754f6b5c36b477d64f9d82bb843d062",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 6.155999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "10e01abfe973",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "10e01abfe973",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "94e1e9dd6778d5fbfbf15d20ba3c9b10d6b7de072e5fb10679c333f2092fc1ab",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 6.344000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "13167c195443",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "13167c195443",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "1e8d618aeda97e0acbf547afe7240e760754f6b5c36b477d64f9d82bb843d062",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 6.655999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "1d4796e6532f",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "1d4796e6532f",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "94e1e9dd6778d5fbfbf15d20ba3c9b10d6b7de072e5fb10679c333f2092fc1ab",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 7.717999999993481,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c9eca5a9167a",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "c9eca5a9167a",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "1e8d618aeda97e0acbf547afe7240e760754f6b5c36b477d64f9d82bb843d062",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 8.547000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "db76890be407",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "db76890be407",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "94e1e9dd6778d5fbfbf15d20ba3c9b10d6b7de072e5fb10679c333f2092fc1ab",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 7.296999999904074,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8990cd57f47f",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "8990cd57f47f",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "2eae47a9fd761db80b73d063e366b3ca65ae4202d422c4bbc637dccc38cf29a8",
+    "fixture_hash": "0895c3151a2de443782029bff89728b493f9e66d9d56f57f2de846c151aa8f43",
+    "seed": 0,
+    "elapsed_seconds": 6.172000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "cb5caad8f9fc",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "cb5caad8f9fc",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "2ba5a0c1dc75b9fa3b3c72e1a838ac91e93611b44966f9b664f1c2c9afdd207f",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 7.078000000095926,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "ebfd8952c372",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "ebfd8952c372",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "2eae47a9fd761db80b73d063e366b3ca65ae4202d422c4bbc637dccc38cf29a8",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 6.359000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5ace8fa93a78",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "5ace8fa93a78",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "f7ba7e2fde94fce76e4360275086de9d4c8c78882bafa873c19ab4dab39fe1a9",
+    "fixture_hash": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+    "seed": 0,
+    "elapsed_seconds": 10.687000000034459,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "9d8f4c1b2e55",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "9d8f4c1b2e55",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "f7ba7e2fde94fce76e4360275086de9d4c8c78882bafa873c19ab4dab39fe1a9",
+    "fixture_hash": "179bb3456cc8226e33df503dcadeee919f3f01d340b74b6a4bfdb297a0124d28",
+    "seed": 0,
+    "elapsed_seconds": 9.109000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "bc08ae8a14eb",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "bc08ae8a14eb",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "f7ba7e2fde94fce76e4360275086de9d4c8c78882bafa873c19ab4dab39fe1a9",
+    "fixture_hash": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+    "seed": 0,
+    "elapsed_seconds": 7.702999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "de7b780fffa6",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "de7b780fffa6",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "1ef22c6bc6e9e24ef6d299630af934231c90091e870c42647a840db6a4eda195",
+    "fixture_hash": "179bb3456cc8226e33df503dcadeee919f3f01d340b74b6a4bfdb297a0124d28",
+    "seed": 0,
+    "elapsed_seconds": 8.78200000000652,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "ee95b19bdc43",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "ee95b19bdc43",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "1ef22c6bc6e9e24ef6d299630af934231c90091e870c42647a840db6a4eda195",
+    "fixture_hash": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+    "seed": 0,
+    "elapsed_seconds": 8.954000000027008,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f5a01a79fa18",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "f5a01a79fa18",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "1ef22c6bc6e9e24ef6d299630af934231c90091e870c42647a840db6a4eda195",
+    "fixture_hash": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+    "seed": 0,
+    "elapsed_seconds": 8.73499999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "a89e69e8732b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "a89e69e8732b",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "d36cfff6d406fb17d31f9e2cdec926e6bc7de43ac3ef409ff383c926f7de3aba",
+    "fixture_hash": "81174c04157f32b8580510ee051336659bbbadfd5c46021ed69b5d659bde0845",
+    "seed": 0,
+    "elapsed_seconds": 12.21799999999348,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c42fcb08f74d",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "c42fcb08f74d",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "39fe056e3404508406f4867bf25cafa8599ae19c195838ecdced684f1af185f0",
+    "fixture_hash": "ab112b50a319b62a7fde8dcf9fd77ad886233dd9fe0a4534573a026ae2824228",
+    "seed": 0,
+    "elapsed_seconds": 8.5,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f33516e25497",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "f33516e25497",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "d36cfff6d406fb17d31f9e2cdec926e6bc7de43ac3ef409ff383c926f7de3aba",
+    "fixture_hash": "ab112b50a319b62a7fde8dcf9fd77ad886233dd9fe0a4534573a026ae2824228",
+    "seed": 0,
+    "elapsed_seconds": 10.172000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "110a429939ea",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "110a429939ea",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "679562107e528f3ed0224164dec758b712ba4467730353bd88112e923a96fcb1",
+    "fixture_hash": "98d6939999d28b8b62b37e6ae8b67f2feaca5653c069ad0e0a6fdc82d868f129",
+    "seed": 0,
+    "elapsed_seconds": 18.186999999918044,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "1fd71b4f447e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "1fd71b4f447e",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "679562107e528f3ed0224164dec758b712ba4467730353bd88112e923a96fcb1",
+    "fixture_hash": "1609a2816f868f8b85b14d37bc97447e9d161c53b21e1a4b60ddea803171d9c6",
+    "seed": 0,
+    "elapsed_seconds": 14.733999999938533,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c08cf455c049",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "c08cf455c049",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "4b0a84e70eca56c1c4beb39c74723b8b0a69cb884df08937d300bba122da52f4",
+    "fixture_hash": "98d6939999d28b8b62b37e6ae8b67f2feaca5653c069ad0e0a6fdc82d868f129",
+    "seed": 0,
+    "elapsed_seconds": 20.85999999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d1be7436a578",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "d1be7436a578",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "4b0a84e70eca56c1c4beb39c74723b8b0a69cb884df08937d300bba122da52f4",
+    "fixture_hash": "1609a2816f868f8b85b14d37bc97447e9d161c53b21e1a4b60ddea803171d9c6",
+    "seed": 0,
+    "elapsed_seconds": 20.67200000002049,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "201436ec24f2",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "201436ec24f2",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "aca0929d305697d0c0b51409d77219a1a6c4b5f2fbe8ee04e95091c2d74e3019",
+    "fixture_hash": "15cc0b460e4f5af0fa57a427991358c1e1f116a78612ce06f6d8f2fb2d4cd518",
+    "seed": 0,
+    "elapsed_seconds": 15.375,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "57b7bd9d7765",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "57b7bd9d7765",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "7560b09a388b07d3cdcce062948d5427f3197b253d64dbc5a8760710bbc56a9e",
+    "fixture_hash": "fabb05b2d908e9902e2911bb0c215d53ae6f1d12075387689ba7d918b1d9009a",
+    "seed": 0,
+    "elapsed_seconds": 16.328000000095926,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "da4c1f748553",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "da4c1f748553",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "aca0929d305697d0c0b51409d77219a1a6c4b5f2fbe8ee04e95091c2d74e3019",
+    "fixture_hash": "fabb05b2d908e9902e2911bb0c215d53ae6f1d12075387689ba7d918b1d9009a",
+    "seed": 0,
+    "elapsed_seconds": 17.030999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "2b97abd8af19",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "2b97abd8af19",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "736d3c1ea4ac98a78c7f96692a78d077e6d3cac374703b2ff5dd6b03a5d107e3",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 5.094000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "b35ff09ca8e6",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "b35ff09ca8e6",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "736d3c1ea4ac98a78c7f96692a78d077e6d3cac374703b2ff5dd6b03a5d107e3",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 5.030999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d0f62ab1fd1b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "d0f62ab1fd1b",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "736d3c1ea4ac98a78c7f96692a78d077e6d3cac374703b2ff5dd6b03a5d107e3",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 5.359000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "4ae7ec699cab",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "4ae7ec699cab",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "3b23fae3822cb2953bb1236b940fe7ec84093cb250eeb36a5e7c8a43da29833a",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 5.719000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "83182273e7c7",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "83182273e7c7",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "3b23fae3822cb2953bb1236b940fe7ec84093cb250eeb36a5e7c8a43da29833a",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 4.266000000061467,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "0c83a819fafe",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "0c83a819fafe",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "2f82cbe6b51fbf18ed5b7e54613c9079785c25c6e2826e5845fab728d51759fc",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 7.453000000095926,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "366b3c7ae95d",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "366b3c7ae95d",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "2f82cbe6b51fbf18ed5b7e54613c9079785c25c6e2826e5845fab728d51759fc",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 7.327999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "a0220283a077",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "a0220283a077",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "e863b693809e28444a2d7b3ff41abbb2b24dab035857da5640b2bff713f3f442",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 4.765999999945052,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "df10f119bb42",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "df10f119bb42",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "e863b693809e28444a2d7b3ff41abbb2b24dab035857da5640b2bff713f3f442",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 5.297000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "53a2ea10832c",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "53a2ea10832c",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "8dbd737511607870d184730ab0c3b386d07475fd26b79c813529793621aafbf0",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 5.969000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "a14164bb1a8a",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "a14164bb1a8a",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "8dbd737511607870d184730ab0c3b386d07475fd26b79c813529793621aafbf0",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 7.5,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5c4df4d43dd3",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "5c4df4d43dd3",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "10bc9c33ff1c4eaec68a75ab3d4bbe33707756485025ffbfa6e4b9156c6af620",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 5.045999999972992,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f838b4d29542",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtrader",
+    "version": "1.9.78.123",
+    "run_id": "f838b4d29542",
+    "operation": "backtest",
+    "runtime_image": "sha256:aa33a01e81ffd59568e859b099dec55cf4078c96d9561aec5278bc5a6f45ad2c",
+    "code_hash": "10bc9c33ff1c4eaec68a75ab3d4bbe33707756485025ffbfa6e4b9156c6af620",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 4.844000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5877d13a8c5d",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "5877d13a8c5d",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "3c1efd48b72903cb59119ddd602238fa488032f13cab9b98eea3843286468d6a",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 6.812999999965541,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c24b079800be",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "c24b079800be",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "3c1efd48b72903cb59119ddd602238fa488032f13cab9b98eea3843286468d6a",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 5.655999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "00bb0efd2c11",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "00bb0efd2c11",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "b21927ac1856f96af76bf9735ce0bd1f27c3f30cb6968e0979ba1aa72edf00b0",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 11.062999999965541,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8d197d1ad53c",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "8d197d1ad53c",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "b21927ac1856f96af76bf9735ce0bd1f27c3f30cb6968e0979ba1aa72edf00b0",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 12.280999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "6b20040f205e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "6b20040f205e",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "c56b104ead6ca3ccfa5ceab84d6a4c79cba02d5e2d65d797c078217355974321",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 22.25,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "712ef39b14fe",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "712ef39b14fe",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "c56b104ead6ca3ccfa5ceab84d6a4c79cba02d5e2d65d797c078217355974321",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 17.483999999938533,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "72f53278cc17",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "72f53278cc17",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "c56b104ead6ca3ccfa5ceab84d6a4c79cba02d5e2d65d797c078217355974321",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 6.484000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "cff67bb171a9",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "cff67bb171a9",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "461193a16f2129575469e1c5186d1e377f93b4b95ec7620f1fccb76f474a0a6b",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 9.047000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "fbd5730ed2a8",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "fbd5730ed2a8",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "461193a16f2129575469e1c5186d1e377f93b4b95ec7620f1fccb76f474a0a6b",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 12.952999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "12e5d6be4153",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "12e5d6be4153",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "57586568684bf9f89541048d449e45b9a36c6155cc65ea473be0e6004707fe93",
+    "fixture_hash": "64b9fc39975758a75e2580e1158a2eb9a520d722e1c1c0ef8d50b66733d79db7",
+    "seed": 0,
+    "elapsed_seconds": 12.21799999999348,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "1c1021a473d8",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "1c1021a473d8",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "57586568684bf9f89541048d449e45b9a36c6155cc65ea473be0e6004707fe93",
+    "fixture_hash": "549187fd2462ec7378eda20eb61eafcda038a56d527a653891f88a92381c8d6d",
+    "seed": 0,
+    "elapsed_seconds": 28.828000000095926,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "a918c19f6162",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "a918c19f6162",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "57586568684bf9f89541048d449e45b9a36c6155cc65ea473be0e6004707fe93",
+    "fixture_hash": "383236f80029fe6624b794baa00426c3fbb45ee341e74cbe072e801b756b246e",
+    "seed": 0,
+    "elapsed_seconds": 9.827999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d990b53a8f7b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "d990b53a8f7b",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "57586568684bf9f89541048d449e45b9a36c6155cc65ea473be0e6004707fe93",
+    "fixture_hash": "75b94902a3e12da9aa91780316d92d4d479d3504ffc2687842974e8baa4cfe2e",
+    "seed": 0,
+    "elapsed_seconds": 21.04700000002049,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "0c710c0cb3b7",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "0c710c0cb3b7",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "289417065f732b31971a6893b68e8bf9ae8baa2e3c1fc562a065e497cba6d64a",
+    "fixture_hash": "1e5f941d00d880611f646302f92fce97efa67edc5a1db2496881ca03b47e42b8",
+    "seed": 0,
+    "elapsed_seconds": 4.702999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f76685470642",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "backtesting_py",
+    "version": "0.6.6",
+    "run_id": "f76685470642",
+    "operation": "backtest",
+    "runtime_image": "sha256:ce111ed32ccb1f0e61d8a571b9a12d008d85fc683793bd5ccb968f6f2517be2f",
+    "code_hash": "289417065f732b31971a6893b68e8bf9ae8baa2e3c1fc562a065e497cba6d64a",
+    "fixture_hash": "71cfc5d86af846486062b51bb281daf78e17ebd41f50f289a7765c6ee21bcefd",
+    "seed": 0,
+    "elapsed_seconds": 4.781000000075437,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8152fcdabd40",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "8152fcdabd40",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "42a74af289c6107d6767f1bc42f2071a749d772c73eded59e6d52ca83a5d2fd2",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 27.875,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "cec4f46597ea",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "cec4f46597ea",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "42a74af289c6107d6767f1bc42f2071a749d772c73eded59e6d52ca83a5d2fd2",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 32.26600000006147,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "35669606f209",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "35669606f209",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "0ea560ced41fa1dfb86020f2b3cde2212093935b9540f91594c7cad0be7efdb0",
+    "fixture_hash": "0895c3151a2de443782029bff89728b493f9e66d9d56f57f2de846c151aa8f43",
+    "seed": 0,
+    "elapsed_seconds": 7.609000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "9b4c30352a03",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "9b4c30352a03",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "0ea560ced41fa1dfb86020f2b3cde2212093935b9540f91594c7cad0be7efdb0",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 43.32799999997951,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "19b7f4a88cab",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "19b7f4a88cab",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "c88f53c8baa7afeba59146f3e3dd218a11d33fff2e3e27cb00c790b47c3f82f1",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 43.85999999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "ba36d4254922",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "ba36d4254922",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "c88f53c8baa7afeba59146f3e3dd218a11d33fff2e3e27cb00c790b47c3f82f1",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 6.14000000001397,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "0cfb9b4bbd6c",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "0cfb9b4bbd6c",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "04bba10479951f186b3a785610365dd65f47177fac9a7a8f9c0e6e209bffe98c",
+    "fixture_hash": "0895c3151a2de443782029bff89728b493f9e66d9d56f57f2de846c151aa8f43",
+    "seed": 0,
+    "elapsed_seconds": 6.812000000034459,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5a0669e96eca",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "5a0669e96eca",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "04bba10479951f186b3a785610365dd65f47177fac9a7a8f9c0e6e209bffe98c",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 11.829000000027008,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8ddcac535e56",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "8ddcac535e56",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "073fced04649a703c27fd5f54fd9fb50fc73e94313496d7b96cc673b754a6286",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 6.859000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "9236fb8a1bf5",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "9236fb8a1bf5",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "073fced04649a703c27fd5f54fd9fb50fc73e94313496d7b96cc673b754a6286",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 5.640999999945052,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "1c2ac467732b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "1c2ac467732b",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "6cc8174d26b5a9cda376af9df4593c43fd9c70b30922f60d9549ee540452e922",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 6.719000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "65494e0edfe4",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "65494e0edfe4",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "6cc8174d26b5a9cda376af9df4593c43fd9c70b30922f60d9549ee540452e922",
+    "fixture_hash": "0895c3151a2de443782029bff89728b493f9e66d9d56f57f2de846c151aa8f43",
+    "seed": 0,
+    "elapsed_seconds": 6.905999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "2fbe67f545b9",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "2fbe67f545b9",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "1ac2f138034a395cc9880aa1e2d544cc6249a355d71d34cfbd873934b099e56e",
+    "fixture_hash": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+    "seed": 0,
+    "elapsed_seconds": 5.89000000001397,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "4e5e8afb8dca",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "4e5e8afb8dca",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "1ac2f138034a395cc9880aa1e2d544cc6249a355d71d34cfbd873934b099e56e",
+    "fixture_hash": "b4d6c2bf09882161fc68f746114f9c26896498d500c3626ea35de7d46ef1bdc0",
+    "seed": 0,
+    "elapsed_seconds": 8.579000000027008,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "7fcc5dc297c9",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "7fcc5dc297c9",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "a4f5ed73282d7d40de37f2c9866de56b57e4c8f18dbda5a4e19c80ad333103d3",
+    "fixture_hash": "0895c3151a2de443782029bff89728b493f9e66d9d56f57f2de846c151aa8f43",
+    "seed": 0,
+    "elapsed_seconds": 10.625,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d171551796f4",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "vnpy_cta",
+    "version": "1.4.1",
+    "run_id": "d171551796f4",
+    "operation": "backtest",
+    "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+    "code_hash": "a4f5ed73282d7d40de37f2c9866de56b57e4c8f18dbda5a4e19c80ad333103d3",
+    "fixture_hash": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+    "seed": 0,
+    "elapsed_seconds": 18.734000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "2fee863fe9ee",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "2fee863fe9ee",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "bf2c62097cbf39d532a7885336a133430ee118901408be82809a292370d58a68",
+    "fixture_hash": "f632a306a70946052b6ff052b981d6de4c090dbf89c8780f9e3cf40069760fa1",
+    "seed": 0,
+    "elapsed_seconds": 31.09299999999348,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "623cbc69f29e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "623cbc69f29e",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "bf2c62097cbf39d532a7885336a133430ee118901408be82809a292370d58a68",
+    "fixture_hash": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+    "seed": 0,
+    "elapsed_seconds": 12.297000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "6b4962ef4c1a",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "6b4962ef4c1a",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "bf2c62097cbf39d532a7885336a133430ee118901408be82809a292370d58a68",
+    "fixture_hash": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+    "seed": 0,
+    "elapsed_seconds": 7.875,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5a75a23df695",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "5a75a23df695",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "02f917606bcd396fea83d359046b5b4a53ab12dd17abf1320f2404ec72ab4642",
+    "fixture_hash": "0c53cfec3b897e315424ce681165e4fbf2645995d5f72b51af0bfb3bc3e509b6",
+    "seed": 0,
+    "elapsed_seconds": 8.15700000000652,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d189222f81f1",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "d189222f81f1",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "02f917606bcd396fea83d359046b5b4a53ab12dd17abf1320f2404ec72ab4642",
+    "fixture_hash": "efab96071b5a8b6b84ab809c9d4558454564620a837783266f570b2f23853327",
+    "seed": 0,
+    "elapsed_seconds": 5.422000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "a3e163424539",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "a3e163424539",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "223c25cfa5250a6ab7859a4f4b3840842f26b592fc4b38e7e2ca9948fa09a2ed",
+    "fixture_hash": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+    "seed": 0,
+    "elapsed_seconds": 9.140999999945052,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "b88699be8e75",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "b88699be8e75",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "223c25cfa5250a6ab7859a4f4b3840842f26b592fc4b38e7e2ca9948fa09a2ed",
+    "fixture_hash": "fac2012f7bb6af24b6e23046e4a90bc3f62c6e13270999c8a3c0a949e290ca64",
+    "seed": 0,
+    "elapsed_seconds": 6.702999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "bc7d61009b86",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "bc7d61009b86",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "223c25cfa5250a6ab7859a4f4b3840842f26b592fc4b38e7e2ca9948fa09a2ed",
+    "fixture_hash": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+    "seed": 0,
+    "elapsed_seconds": 5.562999999965541,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f6b5494a0f67",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "f6b5494a0f67",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "223c25cfa5250a6ab7859a4f4b3840842f26b592fc4b38e7e2ca9948fa09a2ed",
+    "fixture_hash": "f632a306a70946052b6ff052b981d6de4c090dbf89c8780f9e3cf40069760fa1",
+    "seed": 0,
+    "elapsed_seconds": 5.530999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "cac533876ba7",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "cac533876ba7",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "c5c7807556142bfe1fdda56dead7017c12430f03a578da96e745f6f5eb8006b7",
+    "fixture_hash": "0c53cfec3b897e315424ce681165e4fbf2645995d5f72b51af0bfb3bc3e509b6",
+    "seed": 0,
+    "elapsed_seconds": 5.327999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "eb8e804ff9d0",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "eb8e804ff9d0",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "c5c7807556142bfe1fdda56dead7017c12430f03a578da96e745f6f5eb8006b7",
+    "fixture_hash": "efab96071b5a8b6b84ab809c9d4558454564620a837783266f570b2f23853327",
+    "seed": 0,
+    "elapsed_seconds": 6.594000000040978,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "76cafdc1c5ed",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "76cafdc1c5ed",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "7eab7ae9bc8bc907b0953811cf6ff2ce9238e0ad67a0cb7cefe7dbe2570f547f",
+    "fixture_hash": "f632a306a70946052b6ff052b981d6de4c090dbf89c8780f9e3cf40069760fa1",
+    "seed": 0,
+    "elapsed_seconds": 6.952999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "fc2293a5be54",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "fc2293a5be54",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "7eab7ae9bc8bc907b0953811cf6ff2ce9238e0ad67a0cb7cefe7dbe2570f547f",
+    "fixture_hash": "0d419b06760c2aa17255b63a608bfc89e9bf60bb0976178c608d0ed2f9863c87",
+    "seed": 0,
+    "elapsed_seconds": 5.812000000034459,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "45fbb35b401e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "45fbb35b401e",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "d869f34e0760b6117dd8ee70031c5daf7337f3116a0dbc54085c7e884d399b45",
+    "fixture_hash": "efab96071b5a8b6b84ab809c9d4558454564620a837783266f570b2f23853327",
+    "seed": 0,
+    "elapsed_seconds": 5.281000000075437,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8d5cee855b9b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 4
+    },
+    "engine": "rqalpha",
+    "version": "6.4.0",
+    "run_id": "8d5cee855b9b",
+    "operation": "backtest",
+    "runtime_image": "sha256:f1f75ed5ee56140a9fff2d43355a8b5ad640a1eb3fa85d394cd6c15bc9c2c5e6",
+    "code_hash": "d869f34e0760b6117dd8ee70031c5daf7337f3116a0dbc54085c7e884d399b45",
+    "fixture_hash": "0c53cfec3b897e315424ce681165e4fbf2645995d5f72b51af0bfb3bc3e509b6",
+    "seed": 0,
+    "elapsed_seconds": 6.015999999945052,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "6bbe1a70d6b6",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "6bbe1a70d6b6",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "3f13e1a20b3569a9e297175e87b39fdfc8b42df5eb523240e5e3355ced135540",
+    "fixture_hash": "c2e7229847d53e7dc60038bfb54fe2ef654027f106048d2da7cbe800a7785739",
+    "seed": 0,
+    "elapsed_seconds": 11.609000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "bd7afe74e189",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "bd7afe74e189",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "a179a8e848c6fb973819b0fbddb813bd733b81b2e5198906a7c0a9cbe625d982",
+    "fixture_hash": "fd2fb14bdf16ec14d4db1feffa825e0a6ecc500c62dc89b09dab76498b918636",
+    "seed": 0,
+    "elapsed_seconds": 7.48499999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c6eac3c52a1d",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "c6eac3c52a1d",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "a179a8e848c6fb973819b0fbddb813bd733b81b2e5198906a7c0a9cbe625d982",
+    "fixture_hash": "c2e7229847d53e7dc60038bfb54fe2ef654027f106048d2da7cbe800a7785739",
+    "seed": 0,
+    "elapsed_seconds": 7.545999999972992,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d31b26c01bfd",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "d31b26c01bfd",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "57214f18d90885ce130ec0eecaf6f2250193843839c7f37f319014ea4b6ca752",
+    "fixture_hash": "fd2fb14bdf16ec14d4db1feffa825e0a6ecc500c62dc89b09dab76498b918636",
+    "seed": 0,
+    "elapsed_seconds": 8.125,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "e7a174e10474",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "e7a174e10474",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "3f13e1a20b3569a9e297175e87b39fdfc8b42df5eb523240e5e3355ced135540",
+    "fixture_hash": "fd2fb14bdf16ec14d4db1feffa825e0a6ecc500c62dc89b09dab76498b918636",
+    "seed": 0,
+    "elapsed_seconds": 8.35999999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "e9ef90f19ef5",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "e9ef90f19ef5",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "57214f18d90885ce130ec0eecaf6f2250193843839c7f37f319014ea4b6ca752",
+    "fixture_hash": "c2e7229847d53e7dc60038bfb54fe2ef654027f106048d2da7cbe800a7785739",
+    "seed": 0,
+    "elapsed_seconds": 8.0,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "50192ed4f963",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "50192ed4f963",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "923aae47bfe082756c84262e82ab318d673e56dc6df57c4da39295ad929e1653",
+    "fixture_hash": "6a78b6c70f8f444efcc3159930208fa63022b09d476b3b7c2d05143d1fa533c4",
+    "seed": 0,
+    "elapsed_seconds": 8.625,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "5ff4c00a212f",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "5ff4c00a212f",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "923aae47bfe082756c84262e82ab318d673e56dc6df57c4da39295ad929e1653",
+    "fixture_hash": "ea190063ed2a19b8181771e6202b15df178ddbafe8ec780cdb7836ccc9079caf",
+    "seed": 0,
+    "elapsed_seconds": 8.312999999965541,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "f939732af44e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "f939732af44e",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "0e29f400f6ff788a9a7e156e30606a285e6078f6ce980ff02f85bc0196acb000",
+    "fixture_hash": "6a78b6c70f8f444efcc3159930208fa63022b09d476b3b7c2d05143d1fa533c4",
+    "seed": 0,
+    "elapsed_seconds": 8.327999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "12a8cf0bcdae",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "12a8cf0bcdae",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "0636774db1839822b2e75778eaa08c33c930c0c6167dab2f61d2c643d1952177",
+    "fixture_hash": "98d6939999d28b8b62b37e6ae8b67f2feaca5653c069ad0e0a6fdc82d868f129",
+    "seed": 0,
+    "elapsed_seconds": 13.718999999924563,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "bed688c21660",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "bed688c21660",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "0636774db1839822b2e75778eaa08c33c930c0c6167dab2f61d2c643d1952177",
+    "fixture_hash": "1609a2816f868f8b85b14d37bc97447e9d161c53b21e1a4b60ddea803171d9c6",
+    "seed": 0,
+    "elapsed_seconds": 17.5,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "60bcea53df11",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "60bcea53df11",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "0af34a516f27e23dd56cf67f74684c702d433a8b629186e56f2b482cfc31bfe6",
+    "fixture_hash": "15cc0b460e4f5af0fa57a427991358c1e1f116a78612ce06f6d8f2fb2d4cd518",
+    "seed": 0,
+    "elapsed_seconds": 16.890999999945052,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "c062c0cead03",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "c062c0cead03",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "0af34a516f27e23dd56cf67f74684c702d433a8b629186e56f2b482cfc31bfe6",
+    "fixture_hash": "fabb05b2d908e9902e2911bb0c215d53ae6f1d12075387689ba7d918b1d9009a",
+    "seed": 0,
+    "elapsed_seconds": 14.530999999959022,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "4d1a96649fb0",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "4d1a96649fb0",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "a161feda501ea21579ea93137650a5db4b3c1c8bb0173754453266f530cd261c",
+    "fixture_hash": "1609a2816f868f8b85b14d37bc97447e9d161c53b21e1a4b60ddea803171d9c6",
+    "seed": 0,
+    "elapsed_seconds": 16.34299999999348,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "7c0074b16b6b",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "7c0074b16b6b",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "a161feda501ea21579ea93137650a5db4b3c1c8bb0173754453266f530cd261c",
+    "fixture_hash": "9660a2195a0a51a5aa2875c0e5ffa3366cc2a68f3b763c1aa3699a4296895236",
+    "seed": 0,
+    "elapsed_seconds": 16.311999999918044,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "8cfbd3d6e45f",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "8cfbd3d6e45f",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "a161feda501ea21579ea93137650a5db4b3c1c8bb0173754453266f530cd261c",
+    "fixture_hash": "98d6939999d28b8b62b37e6ae8b67f2feaca5653c069ad0e0a6fdc82d868f129",
+    "seed": 0,
+    "elapsed_seconds": 13.234000000054948,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "278484e28a10",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "278484e28a10",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "36489337774dbc977cafce67b8034a33101428851537827f8dbf83dc859edd0c",
+    "fixture_hash": "15cc0b460e4f5af0fa57a427991358c1e1f116a78612ce06f6d8f2fb2d4cd518",
+    "seed": 0,
+    "elapsed_seconds": 14.125,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "41c73398337e",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "41c73398337e",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "36489337774dbc977cafce67b8034a33101428851537827f8dbf83dc859edd0c",
+    "fixture_hash": "fabb05b2d908e9902e2911bb0c215d53ae6f1d12075387689ba7d918b1d9009a",
+    "seed": 0,
+    "elapsed_seconds": 12.672000000020489,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "2a3388b014ba",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "2a3388b014ba",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "2f8fb1af4fc5e93c43fbc4dc5aa606423a4286180a2069a5d64d93a6f6b5dfa1",
+    "fixture_hash": "179bb3456cc8226e33df503dcadeee919f3f01d340b74b6a4bfdb297a0124d28",
+    "seed": 0,
+    "elapsed_seconds": 8.187000000034459,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "abd854174feb",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "abd854174feb",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "2f8fb1af4fc5e93c43fbc4dc5aa606423a4286180a2069a5d64d93a6f6b5dfa1",
+    "fixture_hash": "a2e6714efa8e2684631a79f1eb105a695be6708d1c28a5cfdc281984d381dcb3",
+    "seed": 0,
+    "elapsed_seconds": 9.952999999979511,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d0c796f0e8a1",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "d0c796f0e8a1",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "70234058484020d13f21a1addf61f53d1791f7143b92b8c11f0904fe4e017691",
+    "fixture_hash": "81174c04157f32b8580510ee051336659bbbadfd5c46021ed69b5d659bde0845",
+    "seed": 0,
+    "elapsed_seconds": 8.10999999998603,
+    "isolation": "remote_container_public_stdin_only"
+  },
+  {
+    "status": "ok",
+    "request_id": "d6e4f6b74bf9",
+    "input_integrity": {
+      "status": "pass",
+      "files": 3
+    },
+    "engine": "freqtrade",
+    "version": "2026.8",
+    "run_id": "d6e4f6b74bf9",
+    "operation": "backtest",
+    "runtime_image": "sha256:951d3a00305dcf771250ac702ebf259afef08cbf37108e18d1e3b764521c0f9e",
+    "code_hash": "70234058484020d13f21a1addf61f53d1791f7143b92b8c11f0904fe4e017691",
+    "fixture_hash": "ab112b50a319b62a7fde8dcf9fd77ad886233dd9fe0a4534573a026ae2824228",
+    "seed": 0,
+    "elapsed_seconds": 7.907000000006519,
+    "isolation": "remote_container_public_stdin_only"
+  }
+]

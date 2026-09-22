@@ -46,6 +46,8 @@ Available actions:
 {"tool":"check"} checks exact candidate, reuses identical native executions.
 {"tool":"submit","diagnosis":"observed_no_violation|repaired|inconclusive|needs_spec|infrastructure_blocked","explanation":"evidence and limitations"}
 Only strategy.py is editable. Read-only compatibility bridges are not repair targets.
+Every requested experiment becomes part of final validation, including after edits.
+Run check after probes/edits before submitting. Probe fractions must be in [0.1,0.9].
 The host, never your label, decides acceptance. Repaired requires changed code and all
 mandatory checks passing. observed_no_violation requires unchanged code and all checks
 passing. Insufficient fills/exit coverage is inconclusive. needs_spec, inconclusive and
@@ -277,7 +279,10 @@ def repair(project, runtime, output, options=None, mode="docker", client=None):
                             answer["preservation"] = preservation
                         elif tool == "check":
                             answer, _ = evaluation.check(
-                                candidate, project, original["full"]
+                                candidate,
+                                project,
+                                original["full"],
+                                state.get("required_probes", []),
                             )
                         elif tool in {"probe", "localize"}:
                             if not str(action.get("hypothesis", "")).strip():
@@ -319,12 +324,31 @@ def repair(project, runtime, output, options=None, mode="docker", client=None):
                                 digest(candidate / "strategy.py"),
                                 state["report"]["source_sha256"],
                                 state["report"],
+                                state.get("required_probes", []),
                             )
                             answer = {"verdict": verdict, "submission": action}
                         else:
                             raise ValueError("Unknown tool: " + str(tool))
                         atomic_json(path, answer)
                     answers.append({"tool": tool, "result": answer})
+                    if tool in {"probe", "localize"}:
+                        # Also reconstruct the plan when an action receipt is reused.
+                        definitions = (
+                            [
+                                {
+                                    "kind": action.get("kind", "future"),
+                                    "fraction": float(action.get("fraction", 0.5)),
+                                }
+                            ]
+                            if tool == "probe"
+                            else [
+                                {"kind": "future", "fraction": f} for f in (0.25, 0.375)
+                            ]
+                        )
+                        plan = state.setdefault("required_probes", [])
+                        for definition in definitions:
+                            if definition not in plan:
+                                plan.append(definition)
                     if tool == "check":
                         state["report"] = answer
                     if tool == "submit":

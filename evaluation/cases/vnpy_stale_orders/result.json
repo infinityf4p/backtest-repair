@@ -1,0 +1,390 @@
+{
+  "case": "vnpy_stale_orders",
+  "engine": "vnpy_cta",
+  "source": {
+    "id": "vnpy_stale_orders",
+    "engine": "vnpy_cta",
+    "repository": "https://github.com/vnpy/vnpy_ctastrategy",
+    "pr": 44,
+    "pr_url": "https://github.com/vnpy/vnpy_ctastrategy/pull/44",
+    "merged": true,
+    "merged_at": "2024-04-01T00:35:29Z",
+    "before_commit": "ac7be8fa955fcecff655ad7bc11c8b9a4789ea32",
+    "after_commit": "9465ea27696e43889ea9a5d3946b1f3173d7a039",
+    "source_path": "vnpy_ctastrategy/strategies/double_ma_strategy.py",
+    "source_url": "https://github.com/vnpy/vnpy_ctastrategy/blob/ac7be8fa955fcecff655ad7bc11c8b9a4789ea32/vnpy_ctastrategy/strategies/double_ma_strategy.py",
+    "source_sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324",
+    "upstream_fixed_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+    "candidate_sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324",
+    "source_modified_before_agent": false,
+    "compatibility_bridge": false,
+    "frequency": "1m",
+    "visible_bars": 1440,
+    "visible_start": "2024-01-01T00:00:00",
+    "visible_end": "2024-01-01T23:59:00",
+    "holdout_bars": 1440,
+    "holdout_start": "2024-01-02T00:00:00",
+    "holdout_end": "2024-01-02T23:59:00",
+    "conformance": true
+  },
+  "baseline": {
+    "source_sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324",
+    "baseline": {
+      "status": "ok",
+      "error": null,
+      "run_id": "c9eca5a9167a",
+      "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+      "equity": 9863.258460000001,
+      "position": 1.0,
+      "fills": 151,
+      "trades": null,
+      "elapsed_seconds": 8.547000000020489
+    },
+    "financial": {
+      "status": "pass",
+      "fills": 151,
+      "errors": [],
+      "error_count": 0,
+      "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+    },
+    "invariants": {
+      "status": "fail",
+      "violation_count": 222,
+      "violation_kinds": {
+        "expired_order_still_active": 222
+      },
+      "examples": [
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:18:00",
+          "order_id": "BACKTESTING.52",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 1,
+          "qty": -1.0,
+          "price": 2301.82
+        },
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:18:00",
+          "order_id": "BACKTESTING.53",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 1,
+          "qty": -1.0,
+          "price": 2301.82
+        },
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:19:00",
+          "order_id": "BACKTESTING.52",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 2,
+          "qty": -1.0,
+          "price": 2301.82
+        },
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:19:00",
+          "order_id": "BACKTESTING.53",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 2,
+          "qty": -1.0,
+          "price": 2301.82
+        },
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:20:00",
+          "order_id": "BACKTESTING.52",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 3,
+          "qty": -1.0,
+          "price": 2301.82
+        },
+        {
+          "rule": "expired_order_still_active",
+          "session": "2024-01-01T10:20:00",
+          "order_id": "BACKTESTING.53",
+          "created_session": "2024-01-01T10:17:00",
+          "age_bars": 3,
+          "qty": -1.0,
+          "price": 2301.82
+        }
+      ],
+      "coverage": {
+        "execution": {
+          "observed": {
+            "decisions": 1440,
+            "orders": 151,
+            "fills": 151
+          },
+          "required": {
+            "decisions": 1,
+            "fills": 1
+          }
+        },
+        "order_lifetime": {
+          "decisions": 1440,
+          "distinct_stale_orders": 8,
+          "max_abs_position_observed": 1.0,
+          "native_fill_count": 151
+        }
+      }
+    },
+    "causality": {
+      "status": "pass",
+      "compared_through": "2024-01-01T11:59:00",
+      "prefix_bars": 720,
+      "observable_values": 1440,
+      "fill_count": 63,
+      "order_count": 63,
+      "difference_count": 0,
+      "examples": [],
+      "full_run_id": "c9eca5a9167a",
+      "prefix_run_id": "13167c195443",
+      "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+      "probe": "future",
+      "fixture_kind": "diagnostic_future_transformation",
+      "cutoff_index": 719
+    },
+    "preservation": {
+      "status": "pass",
+      "errors": [],
+      "editable_methods": [
+        "DoubleMaStrategy.on_bar"
+      ]
+    },
+    "conformance": {
+      "status": "pass",
+      "plain_run_id": "06dcfac891e8",
+      "meaning": "Observation toggle preserves native final account and every native fill."
+    },
+    "status": "fail"
+  },
+  "episode": {
+    "case": "vnpy_stale_orders",
+    "execution_identity": {
+      "key": "2edf222399d6069364f8be531b7d5cfb9bea01005692247181ed32062c7936ed",
+      "inputs": {
+        "fixtures/bars.csv": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161",
+        "fixtures/releases.csv": null,
+        "fixtures/warmup.csv": "a091380e524dd89943e7cfbd6764c6f3185e0c6bf47188845b3c40cd5f487e0c",
+        "strategy.py": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324",
+        "task.json": "cc810cf44c20a7e0627ac446aa1b256898e31aaf6dd66297cf4e377df23b0193"
+      },
+      "runtime": {
+        "image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709"
+      },
+      "worker_timeout": 180,
+      "policy": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "max",
+        "max_model_decisions": 5,
+        "max_tokens_per_episode": 50000,
+        "max_output_tokens_per_call": 6000,
+        "max_native_runs": 12,
+        "max_seconds": 1800,
+        "cutoff_fraction": 0.5,
+        "version": "0.4.0-twenty-public",
+        "strategy_count": 20,
+        "agent_episodes_per_strategy": 1,
+        "selection": "17 published examples plus 3 historical bug versions; WTC is a published known-lookahead example. One distinct original source per case. Not a random or production deployment sample.",
+        "holdout": "Later historical periods frozen before agent execution, never sent to model or used for repair feedback.",
+        "repetition_policy": "One agent episode per case. Identical native calls reused. Necessary patch/probe/holdout runs counted separately.",
+        "scope": "Single instrument under explicit native execution and fee profiles; no claim of live profitability or universal correctness.",
+        "conformance": true,
+        "mode": "ssh_docker"
+      },
+      "checker": "faa837252861f5ab03abd3cdd561d1d9464ff96bc5b948df1ff227679f0bcd53"
+    },
+    "status": "repaired",
+    "accepted": true,
+    "submission": {
+      "tool": "submit",
+      "diagnosis": "repaired",
+      "explanation": "Added only self.cancel_all() at the start of DoubleMaStrategy.on_bar, canceling unfilled orders after their next-bar matching opportunity. The 10/20 SMA calculations, crossover predicates, order prices, one-contract reversal logic, and risk settings remain unchanged. Required execution coverage was met. Validation is limited to the supplied replay and finite causality comparison; it makes no profitability claim."
+    },
+    "error": null,
+    "known_tokens": 15954,
+    "usage_unknown": false,
+    "model_calls": 2,
+    "model_requested": "gpt-6-astra",
+    "effort": "max",
+    "native_calls": 6,
+    "seconds": 79.45299999997951,
+    "original_sha256": "1adcfb8f53e98f177adb09cd30b063413d9d3491651c31ad95c1ca3cb9f79324",
+    "submitted_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+    "changed": true,
+    "visible_evidence": {
+      "source_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "10e01abfe973",
+        "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+        "equity": 9852.677684000002,
+        "position": 1.0,
+        "fills": 139,
+        "trades": null,
+        "elapsed_seconds": 6.344000000040978
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 139,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 1440,
+              "orders": 147,
+              "fills": 139
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          },
+          "order_lifetime": {
+            "decisions": 1440,
+            "distinct_stale_orders": 0,
+            "max_abs_position_observed": 1.0,
+            "native_fill_count": 139
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-01-01T11:59:00",
+        "prefix_bars": 720,
+        "observable_values": 1440,
+        "fill_count": 59,
+        "order_count": 61,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "10e01abfe973",
+        "prefix_run_id": "db76890be407",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 719
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [
+          "DoubleMaStrategy.on_bar"
+        ],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 2880,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "conformance": {
+        "status": "pass",
+        "plain_run_id": "1d4796e6532f",
+        "meaning": "Observation toggle preserves native final account and every native fill."
+      },
+      "status": "pass"
+    }
+  },
+  "holdout": {
+    "case": "vnpy_stale_orders",
+    "status": "pass",
+    "agent_accepted": true,
+    "submitted_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+    "data_identity": {
+      "bars.csv": "4df2754ab863b5d70fce2a747ac5d277c65dd7e97cb7edca3bb13cea8ed0ae6c",
+      "warmup.csv": "828753b91513ef247e7d7d5eaec856f552acf6f60d4e87e9887d2ebca32b2161"
+    },
+    "data_start": "2024-01-02T00:00:00",
+    "data_end": "2024-01-02T23:59:00",
+    "used_for_agent_feedback": false,
+    "report": {
+      "source_sha256": "4fbe21d641edba9bb86c0793ad42bb95170e14678f44290b31649b3d5f2ed0a4",
+      "baseline": {
+        "status": "ok",
+        "error": null,
+        "run_id": "ebfd8952c372",
+        "runtime_image": "sha256:9eea2d616531208dce287a198cd4d1b17f030d7ff8b61192a8852e1c7f64b709",
+        "equity": 9916.247264000003,
+        "position": 1.0,
+        "fills": 143,
+        "trades": null,
+        "elapsed_seconds": 6.359000000054948
+      },
+      "financial": {
+        "status": "pass",
+        "fills": 143,
+        "errors": [],
+        "error_count": 0,
+        "meaning": "Reconciles native fills, declared fees and cash/PnL ledger; does not prove strategy intent or market realism."
+      },
+      "invariants": {
+        "status": "pass",
+        "violation_count": 0,
+        "violation_kinds": {},
+        "examples": [],
+        "coverage": {
+          "execution": {
+            "observed": {
+              "decisions": 1440,
+              "orders": 147,
+              "fills": 143
+            },
+            "required": {
+              "decisions": 1,
+              "fills": 1
+            }
+          },
+          "order_lifetime": {
+            "decisions": 1440,
+            "distinct_stale_orders": 0,
+            "max_abs_position_observed": 1.0,
+            "native_fill_count": 143
+          }
+        }
+      },
+      "causality": {
+        "status": "pass",
+        "compared_through": "2024-01-02T11:59:00",
+        "prefix_bars": 720,
+        "observable_values": 1440,
+        "fill_count": 71,
+        "order_count": 73,
+        "difference_count": 0,
+        "examples": [],
+        "full_run_id": "ebfd8952c372",
+        "prefix_run_id": "8990cd57f47f",
+        "scope": "Selected indicators, entry/exit signals and native order/fill prefixes; hidden internal state is not fully observed.",
+        "probe": "future",
+        "fixture_kind": "diagnostic_future_transformation",
+        "cutoff_index": 719
+      },
+      "preservation": {
+        "status": "pass",
+        "errors": [],
+        "editable_methods": [
+          "DoubleMaStrategy.on_bar"
+        ],
+        "indicators": {
+          "status": "pass",
+          "protected_values": 2880,
+          "exceptions": [],
+          "difference_count": 0,
+          "examples": []
+        }
+      },
+      "status": "pass"
+    },
+    "native_calls": 3
+  }
+}

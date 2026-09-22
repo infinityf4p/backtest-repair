@@ -15,3 +15,6 @@ The following checks now have executable regressions:
 Run `python -m pytest -q -p no:cacheprovider`. These checks are local harness regressions; they are separate from the upcoming 20 real-strategy native executions and are not counted as additional strategy or model episodes.
 
 Remaining architecture work unifies orchestration, makes content-addressed executions automatic, adds transactional resume and controlled experiment selection, and strengthens coverage and evidence validation.
+
+
+The 0.4 workflow also closes an additional-experiment omission: every requested probe must pass on the final source. Five focused regressions exercise failed, stale, inconclusive and unverified supplemental evidence, plus replay after a repair. All 20 recorded episodes were revalidated offline with unchanged acceptance outcomes; no paid model repetition was needed. See evaluation/revalidation.json.

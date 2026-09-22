@@ -11,6 +11,7 @@ The original public baseline is commit `73fcd86`. The following corrections appl
 | Intraday capability reported as daily | Shared clock and declared frequency |
 | Two inconsistent agent loops | One package workflow, thin compatibility facades |
 | Interrupted episodes and uncertain model usage | Atomic receipts, action journal, process lock; no automatic paid retry after uncertain dispatch |
+| Additional experiments omitted from final gate | Every requested experiment is mandatory on the final candidate; old or missing evidence blocks acceptance |
 | Incomplete branch coverage treated as success | Explicit minimum coverage and public predicate coverage; inconclusive is not accepted |
 
 Remaining boundaries are material: strategy and recorder share an interpreter; only selected observations are checked; profiles do not implement every native-framework feature; finite probes cannot prove absence of all lookahead; generic examples have no complete independent trading-intent oracle. See [architecture](ARCHITECTURE.md). These limits are not silently converted to passes.
